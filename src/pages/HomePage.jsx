@@ -215,7 +215,6 @@ export default function HomePage() {
         </nav>
       </header>
 
-      {/* Hero Section */}
       <main
         ref={heroRef}
         style={{
