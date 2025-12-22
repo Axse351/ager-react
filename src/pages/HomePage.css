@@ -1,0 +1,232 @@
+/* ================= BASE ================= */
+.home-container {
+    width: 100vw;
+    min-height: 100vh;
+    background: #faf8f0;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+/* ================= HEADER ================= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10rem;
+}
+
+.logo {
+    height: 50px;
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav span {
+    color: #c08142;
+    cursor: pointer;
+}
+
+.nav button {
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    background: #c08142;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* ================= HERO ================= */
+.hero {
+    position: relative;
+    min-height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================= TITLE ================= */
+.title {
+    position: relative;
+    z-index: 10;
+    transform: none !important;
+    will-change: auto;
+    text-align: center;
+}
+
+.title-line {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: bold;
+    color: #c08142;
+}
+
+.title-highlight {
+    margin-top: 1rem;
+    padding: 1.5rem 4rem;
+    background: #c08142;
+    color: white;
+    transform: rotate(-2deg);
+    box-shadow: 0 10px 30px rgba(192, 129, 66, 0.3);
+}
+
+/* ================= PRODUCTS ================= */
+.product {
+    position: absolute;
+}
+
+.product img {
+    width: 200%;
+    filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.25));
+}
+
+/* ===== DESKTOP DEFAULT ===== */
+.product-1 {
+    width: clamp(180px, 22vw, 380px);
+    top: 9%;
+    left: 25%;
+    transform: rotate(-12deg);
+    filter: blur(1px);
+}
+
+.product-2 {
+    width: clamp(160px, 20vw, 320px);
+    top: -6%;
+    right: 35%;
+    transform: rotate(10deg);
+    filter: blur(1px);
+}
+
+.product-3 {
+    width: clamp(150px, 18vw, 300px);
+    bottom: 1%;
+    left: 50%;
+    transform: rotate(-15deg);
+    z-index: 20;
+}
+
+.product-4 {
+    width: clamp(130px, 16vw, 240px);
+    bottom: -9%;
+    right: 65%;
+    transform: rotate(-15deg);
+    z-index: 25;
+}
+
+/* ================= LAPTOP 16 INCH ================= */
+@media (min-width: 1440px) and (max-width: 1919px) {
+    .header {
+        padding: 1.5rem 8rem;
+    }
+
+    .product-1 {
+        left: 19%;
+    }
+
+    .product-2 {
+        right: 22%;
+    }
+
+    .product-3 {
+        bottom: -1%;
+        left: 50%;
+    }
+
+    .product-4 {
+        bottom: -5%;
+        right: 60%;
+    }
+}
+
+/* ================= LAPTOP 14 INCH ================= */
+@media (min-width: 1280px) and (max-width: 1439px) {
+    .header {
+        padding: 1.5rem 6rem;
+    }
+
+    .product-1 {
+        left: 18%;
+    }
+
+    .product-2 {
+        right: 30%;
+    }
+
+    .product-3 {
+        bottom: 15%;
+        left: 48%;
+    }
+
+    .product-4 {
+        bottom: 4%;
+        right: 58%;
+    }
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+    .header {
+        padding: 1.5rem 3rem;
+    }
+
+    .product-1 {
+        left: 5%;
+    }
+
+    .product-2 {
+        right: 5%;
+    }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .nav {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* hide background products */
+    .product-1,
+    .product-2 {
+        display: none;
+    }
+
+    .product-3 {
+        width: 170px;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-60%) rotate(-8deg);
+        z-index: 15;
+    }
+
+    .product-4 {
+        width: 160px;
+        top: 72%;
+        left: 10%;
+        transform: rotate(-6deg);
+        z-index: 20;
+    }
+
+    .title-highlight {
+        padding: 1rem 2rem;
+    }
+}
+
+/* ================= SHORT HEIGHT SCREENS ================= */
+@media (max-height: 750px) {
+    .product-3 {
+        bottom: 5%;
+    }
+
+    .product-4 {
+        bottom: 2%;
+    }
+}
