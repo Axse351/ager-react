@@ -58,52 +58,67 @@ body {
 }
 
 /* ================= WHY US ================= */
+/* WHY SECTION */
 .why-section {
     background: #faf8f0;
-    padding: 8rem 0;
+    padding: 100px 80px;
 }
 
-.why-wrapper {
+.why-container {
     max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    padding: 0 2rem;
-    align-items: center;
+    margin: 0 auto;
+    text-align: center;
 }
 
+/* TITLE */
+.why-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #c47a2c;
+    margin-bottom: 20px;
+}
+
+/* DESCRIPTION */
+.why-description {
+    max-width: 750px;
+    margin: 0 auto 50px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* FEATURE BOXES */
+.why-features {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-bottom: 60px;
+}
+
+.feature-box {
+    border: 1px solid #c47a2c;
+    padding: 14px 10px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #000;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.feature-box:hover {
+    background: #c47a2c;
+    color: #fff;
+}
+
+/* IMAGE BELOW */
 .why-image img {
     width: 100%;
-    border-radius: 16px;
+    max-width: 900px;
+    border-radius: 6px;
 }
 
-.why-content h2 {
-    font-size: 3rem;
-    color: #c08142;
-    margin-bottom: 1.5rem;
-}
 
-.why-content p {
-    color: #3a2a1a;
-    line-height: 1.9;
-    margin-bottom: 2.5rem;
-}
-
-/* ================= FEATURES ================= */
-.why-features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-}
-
-.why-features span {
-    font-size: 0.85rem;
-    padding: 0.6rem 1.2rem;
-    border: 1px solid #c08142;
-    color: #3a2a1a;
-    letter-spacing: 0.08em;
-}
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
@@ -134,4 +149,16 @@ body {
     .about-content {
         padding: 8rem 0;
     }
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .why-features {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    
+        @media (max-width: 600px) {
+            .why-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 }

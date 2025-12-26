@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
+import Header from "../components/Header";
 
 export default function HomePage() {
   const heroRef = useRef(null);
@@ -9,8 +9,6 @@ export default function HomePage() {
   const product2Ref = useRef(null);
   const product3Ref = useRef(null);
   const product4Ref = useRef(null);
-  const charcoalRef = useRef(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -27,7 +25,6 @@ export default function HomePage() {
         product2Ref.current,
         product3Ref.current,
         product4Ref.current,
-        charcoalRef.current,
       ];
 
       products.forEach((el, i) => {
@@ -55,27 +52,11 @@ export default function HomePage() {
 
   return (
     <div className="home-container">
-      {/* HEADER */}
-      <header className="header">
-        <img
-          src="/src/assets/logo.png"
-          alt="AGER Logo"
-          className="logo"
-          onClick={() => navigate("/")}
-        />
-
-        <nav className="nav">
-          <span onClick={() => navigate("/")}>Home</span>
-          <span onClick={() => navigate("/about")}>About Us</span>
-          <span onClick={() => navigate("/gallery")}>Gallery</span>
-          <span onClick={() => navigate("/product")}>Product</span>
-          <button onClick={() => navigate("/contact-us")}>Contact Us</button>
-        </nav>
-      </header>
+      {/* ✅ HEADER REUSABLE */}
+      <Header />
 
       {/* HERO */}
       <main ref={heroRef} className="hero">
-        {/* PRODUCTS */}
         <div ref={product1Ref} className="product product-1">
           <img src="/src/assets/gambar1.png" alt="Product 1" />
         </div>
@@ -92,13 +73,12 @@ export default function HomePage() {
           <img src="/src/assets/gambar4.png" alt="Product 4" />
         </div>
 
-        {/* TITLE */}
         <div className="title">
           <div className="title-line">TRANSFORM YOUR</div>
           <div className="title-highlight title-line">
             HOOKAH ENJOYMENT
           </div>
-        </div>
+        </div> 
       </main>
     </div>
   );
