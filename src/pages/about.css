@@ -1,0 +1,137 @@
+/* ================= RESET ================= */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    background: #faf8f0;
+    font-family: sans-serif;
+}
+
+/* ================= HERO ================= */
+.about-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.about-hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.about-hero-content h1 {
+    font-size: clamp(3rem, 8vw, 7rem);
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
+}
+
+.about-hero-content p {
+    font-size: 1.2rem;
+    max-width: 720px;
+    line-height: 1.8;
+}
+
+/* ================= WHY US ================= */
+.why-section {
+    background: #faf8f0;
+    padding: 8rem 0;
+}
+
+.why-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 0 2rem;
+    align-items: center;
+}
+
+.why-image img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.why-content h2 {
+    font-size: 3rem;
+    color: #c08142;
+    margin-bottom: 1.5rem;
+}
+
+.why-content p {
+    color: #3a2a1a;
+    line-height: 1.9;
+    margin-bottom: 2.5rem;
+}
+
+/* ================= FEATURES ================= */
+.why-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+}
+
+.why-features span {
+    font-size: 0.85rem;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid #c08142;
+    color: #3a2a1a;
+    letter-spacing: 0.08em;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .why-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .about-hero-content h1 {
+        letter-spacing: 0.12em;
+    }
+}
+@media (max-width: 1366px) {
+    .parallax-title {
+        font-size: clamp(3rem, 7vw, 6rem);
+        letter-spacing: 0.15em;
+    }
+
+    .about-content {
+        padding: 7rem 0;
+    }
+}
+@media (min-width: 1367px) {
+    .parallax-title {
+        font-size: clamp(4rem, 8vw, 8rem);
+        letter-spacing: 0.18em;
+    }
+
+    .about-content {
+        padding: 8rem 0;
+    }
+}
