@@ -3,7 +3,15 @@ import { gsap } from "gsap";
 import "./HomePage.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { dummyHome, ecoFriendlyLogo } from "../assets";
+import {
+  dummyHome,
+  ecoFriendlyLogo,
+  shisha,
+  iconLongLasting,
+  iconLowAsh,
+  iconSmokeless,
+  iconOdorless,
+} from "../assets";
 
 export default function HomePage() {
   const heroRef = useRef(null);
@@ -16,28 +24,22 @@ export default function HomePage() {
     {
       title: "LONG LASTING BURNING",
       desc: "Generates steady heat",
-      icon: "🔥",
-    },
-    {
-      title: "100% NATURAL",
-      desc: "Clean burning",
-      icon: "🌱",
+      icon: iconLongLasting,
     },
     {
       title: "ODORLESS",
       desc: "Low moisture content",
-      icon: "🚫",
-      center: true,
+      icon: iconOdorless,
     },
     {
       title: "LOW ASH",
       desc: "Minimal residue",
-      icon: "🌫️",
+      icon: iconLowAsh,
     },
     {
       title: "SMOKELESS",
       desc: "Efficient burning",
-      icon: "💨",
+      icon: iconSmokeless,
     },
   ];
 
@@ -117,23 +119,23 @@ export default function HomePage() {
         <img className="product-display" src={dummyHome} alt="" />
       </div>
 
-      <div className="product-highlights">
-        <div className="eco">
-          <img className="eco-friendly-img" src={ecoFriendlyLogo} alt="" />
-          <p>ECO FRIENDLY</p>
+      <div className="product-highlights2">
+        <div className="highlight-tags">
+          <div className="eco-friendly-tag">
+            <img className="eco-friendly" src={ecoFriendlyLogo} alt="" />
+            <h4>ECO FRIENDLY</h4>
+          </div>
+          <h4 className="natural-tag">100% NATURAL</h4>
         </div>
-
-        <div className="features">
+        <div className="shisha-img">
+          <img src={shisha} alt="" />
           {features.map((item, index) => (
-            <div
-              key={index}
-              className={`feature feature-${index} ${
-                item.center ? "center" : ""
-              }`}
-            >
-              <div className="icon">{item.icon}</div>
-              <h4>{item.title}</h4>
-              <p>{item.desc}</p>
+            <div key={index} className={`highlight-point-desc point-${index}`}>
+              <img src={item.icon} alt="" />
+              <div className="desc">
+                <h5>{item.title}</h5>
+                <p>{item.desc}</p>
+              </div>
             </div>
           ))}
         </div>

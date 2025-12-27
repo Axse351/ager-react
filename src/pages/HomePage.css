@@ -7,6 +7,99 @@
   font-family: sans-serif;
 }
 
+.product-highlights2 {
+  position: relative;
+  height: 100vh;
+  padding: 30px 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.natural-tag {
+  background: #0a9600;
+  color: white;
+  font-size: 30px;
+  padding: 8px 12px;
+}
+
+.highlight-tags {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.eco-friendly-tag {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 30px;
+}
+
+.eco-friendly {
+  width: 50px;
+}
+
+.shisha-img {
+  position: relative;
+}
+
+.shisha-img img {
+  max-width: 450px;
+}
+
+.highlight-point-desc {
+  position: absolute;
+  display: flex;
+  align-items: center;
+
+  background-color: #444;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 16px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  animation: floating 4s ease-in-out infinite;
+}
+
+.point-0 {
+  top: 12%;
+  left: -15%;
+}
+
+.point-1 {
+  top: 45%;
+  right: -20%;
+}
+
+.point-2 {
+  bottom: 15%;
+  left: -10%;
+}
+
+.point-3 {
+  bottom: 7%;
+  right: -20%;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 /* ================= HEADER ================= */
 .header {
   display: flex;
@@ -109,8 +202,8 @@
 }
 
 .product-4 {
-  width: clamp(130px, 16vw, 240px);
-  bottom: -9%;
+  width: clamp(130px, 16vw, 220px);
+  bottom: -3%;
   right: 65%;
   transform: rotate(-15deg);
   z-index: 25;
@@ -144,6 +237,10 @@
     width: clamp(100px, 16vw, 110px);
     top: 64%;
     right: 60%;
+  }
+
+  .shisha-img img {
+    max-width: 400px;
   }
 }
 
@@ -354,11 +451,11 @@
   gap: 80px;
   padding: 100px 120px;
 
+  align-items: center;
   /* position: relative; */
   min-height: calc(100vh);
   /* display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center; */
 }
 
@@ -392,6 +489,7 @@
   border-radius: 20px;
   padding: 40px;
   color: white;
+  height: fit-content;
 }
 
 .contact-box h3 {
