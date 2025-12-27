@@ -5,6 +5,7 @@ import iconLongLasting from "./icon-long-lasting.svg";
 import iconLowAsh from "./icon-low-ash.svg";
 import iconSmokeless from "./icon-smokeless.svg";
 import iconOdorless from "./icon-odorless.svg";
+import agreementPict from "./agreement-pict.jpg";
 
 export {
   dummyHome,
@@ -14,4 +15,5 @@ export {
   iconLowAsh,
   iconSmokeless,
   iconOdorless,
+  agreementPict,
 };
