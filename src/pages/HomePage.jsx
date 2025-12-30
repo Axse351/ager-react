@@ -11,6 +11,12 @@ import {
   iconLowAsh,
   iconSmokeless,
   iconOdorless,
+  gambar4,
+  exportQualityBadge,
+  coconutShell,
+  briquette,
+  briquetteAsh,
+  trapesiumBg,
 } from "../assets";
 
 export default function HomePage() {
@@ -110,34 +116,80 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className="product-cta">
+      {/* <div className="product-cta">
         <div className="cta-title title-line">PREMIUM COCONUT</div>
         <div className="cta-subtitle title-highlight title-line">
           CHARHOAL BRIQUETTES
         </div>
         <button className="cta-button">GET IT NOW</button>
         <img className="product-display" src={dummyHome} alt="" />
+      </div> */}
+
+      <div className="product-cta2">
+        <h2 className="natural-tagline">100% NATURAL</h2>
+
+        <div className="middle-area">
+          <div className="premium-coconut-text">
+            <h3 className="premium-badge">PREMIUM</h3>
+            <h3>COCONUT</h3>
+          </div>
+
+          <div className="ash-display">
+            <img className="main-briquette" src={briquette} alt="" />
+            <img className="small-briquette" src={briquette} alt="" />
+          </div>
+
+          <div className="charcoal-briquettes-text">
+            <h3>CHARCOAL</h3>
+            <h3>BRIQUETTES</h3>
+          </div>
+        </div>
+
+        <div className="product-desc">
+          <img className="export-badge" src={exportQualityBadge} alt="" />
+
+          <div className="divider-vertical" />
+
+          <div className="made-from-coconut-shell">
+            <img src={coconutShell} alt="" />
+            <p className="made-from">
+              <span>MADE FROM</span>
+              <span>COCONUT SHELL</span>
+            </p>
+          </div>
+
+          <div className="divider-vertical" />
+
+          <div className="cube-shape">
+            <img src={briquetteAsh} alt="" />
+            <p className="cube-shape-desc">
+              <span>CUBE</span>
+              <span>SHAPE</span>
+            </p>
+          </div>
+        </div>
+
+        <button className="cta2-button">GET IT NOW</button>
+        <small className="minimum-order">MINIMUM ORDER AVAILABLE</small>
       </div>
 
-      <div className="product-highlights2">
-        <div className="highlight-tags">
-          <div className="eco-friendly-tag">
-            <img className="eco-friendly" src={ecoFriendlyLogo} alt="" />
-            <h4>ECO FRIENDLY</h4>
-          </div>
-          <h4 className="natural-tag">100% NATURAL</h4>
-        </div>
-        <div className="shisha-img">
-          <img src={shisha} alt="" />
-          {features.map((item, index) => (
-            <div key={index} className={`highlight-point-desc point-${index}`}>
-              <img src={item.icon} alt="" />
-              <div className="desc">
-                <h5>{item.title}</h5>
-                <p>{item.desc}</p>
-              </div>
+      <div className="product-highlights">
+        <img src={ecoFriendlyLogo} alt="" />
+
+        <div className="highlights">
+          <img className="trapesiumBg" src={trapesiumBg} alt="" />
+          <div className="product-n-highlights">
+            <img src={dummyHome} alt="" />
+            <div className="highlight-points">
+              {features.map((feature, index) => (
+                <div className="highlight-point" key={index}>
+                  <img src={feature.icon} alt={feature.title} />
+                  <h4>{feature.title}</h4>
+                  <p>{feature.desc}</p>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
 

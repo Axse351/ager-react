@@ -17,11 +17,8 @@ export default function Header() {
       <nav className="nav">
         <span onClick={() => navigate("/")}>Home</span>
         <span onClick={() => navigate("/about")}>About Us</span>
-        <span onClick={() => navigate("/gallery")}>Gallery</span>
         <span onClick={() => navigate("/product")}>Product</span>
-        <button onClick={() => navigate("/contact-us")}>
-          Contact Us
-        </button>
+        <button onClick={() => navigate("/contact-us")}>Contact Us</button>
       </nav>
     </header>
   );

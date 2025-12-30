@@ -29,6 +29,9 @@ const ContactUsPage = () => {
           allowfullscreen=""
           loading="lazy"
         ></iframe>
+        <h3 className="location-detail">
+          7FWP+RFV, Bodesari, Kec. Plumbon, Kabupaten Cirebon, Jawa Barat 45155
+        </h3>
       </div>
 
       <div className="contact-us-area">

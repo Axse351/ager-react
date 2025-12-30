@@ -26,7 +26,6 @@ export default function Footer() {
           <ul>
             <li>Home</li>
             <li>About Us</li>
-            <li>Gallery</li>
             <li>Products</li>
             <li>Contact Us</li>
           </ul>

@@ -6,6 +6,12 @@ import iconLowAsh from "./icon-low-ash.svg";
 import iconSmokeless from "./icon-smokeless.svg";
 import iconOdorless from "./icon-odorless.svg";
 import agreementPict from "./agreement-pict.jpg";
+import gambar4 from "./gambar4.png";
+import exportQualityBadge from "./export-quality-badge.svg";
+import coconutShell from "./coconut-shell.png";
+import briquette from "./briquette.png";
+import briquetteAsh from "./briquette-ash.png";
+import trapesiumBg from "./trapesium-bg.svg";
 
 export {
   dummyHome,
@@ -16,4 +22,10 @@ export {
   iconSmokeless,
   iconOdorless,
   agreementPict,
+  gambar4,
+  exportQualityBadge,
+  coconutShell,
+  briquette,
+  briquetteAsh,
+  trapesiumBg,
 };
