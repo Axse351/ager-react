@@ -7,6 +7,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 const ProductPage = () => {
+  const navigate = useNavigate();
+
   const products = [
     {
       id: "P001",
@@ -23,6 +25,18 @@ const ProductPage = () => {
     {
       id: "P003",
       name: "Product 3",
+      desc: "Lorem Ipsum Dolor Sit Amet",
+      imgLink: gambar3,
+    },
+    {
+      id: "P004",
+      name: "Product 4",
+      desc: "Lorem Ipsum Dolor Sit Amet",
+      imgLink: gambar3,
+    },
+    {
+      id: "P005",
+      name: "Product 5",
       desc: "Lorem Ipsum Dolor Sit Amet",
       imgLink: gambar3,
     },

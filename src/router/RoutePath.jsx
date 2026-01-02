@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import { HomePage, About, ContactUs, Product } from "../pages";
+import { HomePage, About, ContactUs, Product, ProductDetail } from "../pages";
 
 const RoutePath = () => {
   return (
@@ -10,6 +10,7 @@ const RoutePath = () => {
         <Route path="/about" element={<About />} />
         <Route path="/product" element={<Product />} />
         <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/products/:id" element={<ProductDetail />} />
       </Routes>
     </BrowserRouter>
   );
