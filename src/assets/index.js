@@ -6,6 +6,9 @@ import iconLowAsh from "./icon-low-ash.svg";
 import iconSmokeless from "./icon-smokeless.svg";
 import iconOdorless from "./icon-odorless.svg";
 import agreementPict from "./agreement-pict.jpg";
+import gambar1 from "./gambar1.png";
+import gambar2 from "./gambar2.png";
+import gambar3 from "./gambar3.png";
 import gambar4 from "./gambar4.png";
 import exportQualityBadge from "./export-quality-badge.svg";
 import coconutShell from "./coconut-shell.png";
@@ -22,6 +25,9 @@ export {
   iconSmokeless,
   iconOdorless,
   agreementPict,
+  gambar1,
+  gambar2,
+  gambar3,
   gambar4,
   exportQualityBadge,
   coconutShell,

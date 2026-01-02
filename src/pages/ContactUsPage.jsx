@@ -17,10 +17,10 @@ const ContactUsPage = () => {
           quickly and professionally.
         </h3>
       </div>
-      <img className="agreement-pic" src={agreementPict} alt="" />
+      {/* <img className="agreement-pic" src={agreementPict} alt="" /> */}
 
       <div className="location-area">
-        <h2 className="location-title">LOCATION</h2>
+        {/* <h2 className="location-title">LOCATION</h2> */}
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.54703181559!2d108.4835969755526!3d-6.702882165533825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6ee1c9a719b13f%3A0xcd07810cf031a01c!2s7FWP%2BRFV%2C%20Bodesari%2C%20Kec.%20Plumbon%2C%20Kabupaten%20Cirebon%2C%20Jawa%20Barat!5e0!3m2!1sen!2sid!4v1766875307059!5m2!1sen!2sid"
           width="70%"
