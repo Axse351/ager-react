@@ -3,6 +3,9 @@ import { gsap } from "gsap";
 import "./HomePage.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import FeatureCarousel from "../components/FeatureCarousel";
+import BrandEssence from "../components/BrandEssence";
+import WhyChooseUs from "../components/WhyChooseUs";
 import {
   dummyHome,
   ecoFriendlyLogo,
@@ -18,6 +21,7 @@ import {
   briquetteAsh,
   trapesiumBg,
 } from "../assets";
+import FinalCTA from "../components/FinalCTA";
 
 export default function HomePage() {
   const heroRef = useRef(null);
@@ -93,28 +97,41 @@ export default function HomePage() {
     <div className="home-container">
       <Header />
 
-      <div ref={heroRef} className="hero">
-        <div ref={product1Ref} className="product product-1">
-          <img src="/src/assets/gambar1.png" alt="Product 1" />
-        </div>
+     <div ref={heroRef} className="hero">
+  <div ref={product1Ref} className="product product-1">
+    <img src="/src/assets/gambar1.png" alt="Product 1" />
+  </div>
 
-        <div ref={product2Ref} className="product product-2">
-          <img src="/src/assets/gambar2.png" alt="Product 2" />
-        </div>
+  <div ref={product2Ref} className="product product-2">
+    <img src="/src/assets/gambar2.png" alt="Product 2" />
+  </div>
 
-        <div ref={product3Ref} className="product product-3">
-          <img src="/src/assets/gambar3.png" alt="Product 3" />
-        </div>
+  <div ref={product3Ref} className="product product-3">
+    <img src="/src/assets/gambar3.png" alt="Product 3" />
+  </div>
 
-        <div ref={product4Ref} className="product product-4">
-          <img src="/src/assets/gambar4.png" alt="Product 4" />
-        </div>
+  <div ref={product4Ref} className="product product-4">
+    <img src="/src/assets/gambar4.png" alt="Product 4" />
+  </div>
 
-        <div className="title">
-          <div className="title-line">TRANSFORM YOUR</div>
-          <div className="title-highlight title-line">HOOKAH ENJOYMENT</div>
-        </div>
-      </div>
+  <div className="title">
+    <div className="title-line">TRANSFORM YOUR</div>
+    <div className="title-highlight title-line">HOOKAH ENJOYMENT</div>
+
+    {/* 🔥 ACTION BUTTON */}
+    <button
+      className="hero-btn"
+      onClick={() => {
+        document
+          .querySelector(".natural-section")
+          ?.scrollIntoView({ behavior: "smooth" });
+      }}
+    >
+      Pelajari Lebih Lanjut →
+    </button>
+  </div>
+</div>
+
 
       {/* <div className="product-cta">
         <div className="cta-title title-line">PREMIUM COCONUT</div>
@@ -125,73 +142,48 @@ export default function HomePage() {
         <img className="product-display" src={dummyHome} alt="" />
       </div> */}
 
-      <div className="product-cta2">
-        <h2 className="natural-tagline">100% NATURAL</h2>
+     <div className="natural-section">
+  <div className="natural-left">
+    <span className="natural-label">100% NATURAL</span>
 
-        <div className="middle-area">
-          <div className="premium-coconut-text">
-            <h3 className="premium-badge">PREMIUM</h3>
-            <h3>COCONUT</h3>
-          </div>
+    <h2 className="natural-title">
+      Premium Coconut <br /> Charcoal Briquettes
+    </h2>
 
-          <div className="ash-display">
-            <img className="main-briquette" src={briquette} alt="" />
-            <img className="small-briquette" src={briquette} alt="" />
-          </div>
+    <p className="natural-desc">
+      Made from selected coconut shells with high carbon content.
+      Produces long-lasting heat, low ash, odorless and smokeless.
+    </p>
 
-          <div className="charcoal-briquettes-text">
-            <h3>CHARCOAL</h3>
-            <h3>BRIQUETTES</h3>
-          </div>
-        </div>
-
-        <div className="product-desc">
-          <img className="export-badge" src={exportQualityBadge} alt="" />
-
-          <div className="divider-vertical" />
-
-          <div className="made-from-coconut-shell">
-            <img src={coconutShell} alt="" />
-            <p className="made-from">
-              <span>MADE FROM</span>
-              <span>COCONUT SHELL</span>
-            </p>
-          </div>
-
-          <div className="divider-vertical" />
-
-          <div className="cube-shape">
-            <img src={briquetteAsh} alt="" />
-            <p className="cube-shape-desc">
-              <span>CUBE</span>
-              <span>SHAPE</span>
-            </p>
-          </div>
-        </div>
-
-        <button className="cta2-button">GET IT NOW</button>
-        <small className="minimum-order">MINIMUM ORDER AVAILABLE</small>
+    <div className="natural-features">
+      <div className="feature-item">
+        <img src={coconutShell} alt="" />
+        <span>Coconut Shell</span>
       </div>
 
-      <div className="product-highlights">
-        <img src={ecoFriendlyLogo} alt="" />
-
-        <div className="highlights">
-          <img className="trapesiumBg" src={trapesiumBg} alt="" />
-          <div className="product-n-highlights">
-            <img src={dummyHome} alt="" />
-            <div className="highlight-points">
-              {features.map((feature, index) => (
-                <div className="highlight-point" key={index}>
-                  <img src={feature.icon} alt={feature.title} />
-                  <h4>{feature.title}</h4>
-                  <p>{feature.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+      <div className="feature-item">
+        <img src={briquetteAsh} alt="" />
+        <span>Low Ash</span>
       </div>
+
+      <div className="feature-item">
+        <img src={exportQualityBadge} alt="" />
+        <span>Export Quality</span>
+      </div>
+    </div>
+
+    <button className="natural-btn">Request Quote</button>
+    <small className="minimum-order">Minimum order available</small>
+  </div>
+
+  <div className="natural-right">
+    <img className="briquette-main" src={briquette} alt="" />
+    <img className="briquette-float" src={briquette} alt="" />
+  </div>
+</div>
+
+<BrandEssence />
+     <FeatureCarousel features={features} />
 
       <div className="contact-us-area">
         <div className="contact-details">
