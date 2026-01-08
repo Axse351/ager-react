@@ -295,52 +295,54 @@ body {
 
 /* ================= STATS SECTION ================= */
 .stats-section {
-    position: relative;
-    padding: 140px 80px;
-    background: #fff;
-    overflow: hidden;
+  position: relative;
+  padding: 140px 80px;
+  background: #fff;
+  overflow: hidden;
 }
 
-/* FLOATING IMAGES */
+/* ===== FLOATING BACKGROUND IMAGES ===== */
 .stats-image {
-    position: absolute;
-    width: 560px;
+  position: absolute;
+  width: 560px;
+  opacity: 0.12;           /* biar jadi background */
+  z-index: 1;              /* PALING BELAKANG */
+  pointer-events: none;
 }
 
 .stats-image.left {
-    top: 15%;
-    left: 5%;
+  top: 10%;
+  left: -120px;
 }
 
 .stats-image.right {
-    top: 15%;
-    right: 5%;
+  top: 10%;
+  right: -120px;
 }
 
-/* GRID */
+/* ===== CONTENT DI DEPAN ===== */
 .stats-grid {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 80px 100px;
-    text-align: center;
+  position: relative;
+  z-index: 5;              /* DI ATAS GAMBAR */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px;
+  text-align: center;
 }
 
-/* ITEM */
 .stat-item h3 {
-    font-size: 52px;
-    font-weight: 800;
-    color: #c47a2c;
-    margin-bottom: 10px;
+  font-size: 42px;
+  font-weight: 700;
 }
 
 .stat-item p {
-    font-size: 14px;
-    letter-spacing: 1px;
-    color: #c47a2c;
-    font-weight: 600;
+  margin-top: 8px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
 }
+
 
 /* ================= OUR PRODUCTION ================= */
 .production-section {

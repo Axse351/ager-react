@@ -1,60 +1,57 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./HomePage.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import FeatureCarousel from "../components/FeatureCarousel";
-import BrandEssence from "../components/BrandEssence";
-import WhyChooseUs from "../components/WhyChooseUs";
-import {
-  dummyHome,
-  ecoFriendlyLogo,
-  shisha,
-  iconLongLasting,
-  iconLowAsh,
-  iconSmokeless,
-  iconOdorless,
-  gambar4,
-  exportQualityBadge,
-  coconutShell,
-  briquette,
-  briquetteAsh,
-  trapesiumBg,
-} from "../assets";
-import FinalCTA from "../components/FinalCTA";
+import { useState } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function HomePage() {
   const heroRef = useRef(null);
-  const product1Ref = useRef(null);
-  const product2Ref = useRef(null);
-  const product3Ref = useRef(null);
-  const product4Ref = useRef(null);
+  const subHeadlineRef = useRef(null);
+  const statsRef = useRef(null);
+  const qualityRef = useRef(null);
+const videoSectionRef = useRef(null);
+const videoTrackRef = useRef(null);
+const videoTitleRef = useRef(null);
+const videoSubtitleRef = useRef(null);
+  const numbersRef = useRef([]);
+  const productRefs = useRef([]);
+const [activeSlide, setActiveSlide] = useState(0);
 
-  const features = [
-    {
-      title: "LONG LASTING BURNING",
-      desc: "Generates steady heat",
-      icon: iconLongLasting,
-    },
-    {
-      title: "ODORLESS",
-      desc: "Low moisture content",
-      icon: iconOdorless,
-    },
-    {
-      title: "LOW ASH",
-      desc: "Minimal residue",
-      icon: iconLowAsh,
-    },
-    {
-      title: "SMOKELESS",
-      desc: "Efficient burning",
-      icon: iconSmokeless,
-    },
-  ];
+const slides = [
+  {
+    title: "Integrated Production System",
+    desc: "End-to-end manufacturing control, ensuring consistency from raw material selection to finished product.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4",
+  },
+  {
+    title: "Strict Quality Standards",
+    desc: "Multi-stage inspection processes to maintain stable performance and uniform specifications.",
+    video: "https://www.w3schools.com/html/movie.mp4",
+  },
+  {
+    title: "Advanced Manufacturing Technology",
+    desc: "Continuously upgraded machinery to enhance efficiency, precision, and reliability.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4",
+  },
+  {
+    title: "Large-Scale Production Capacity",
+    desc: "Designed to support long-term contracts and high-volume export requirements.",
+    video: "https://www.w3schools.com/html/movie.mp4",
+  },
+  {
+    title: "Export-Oriented Management",
+    desc: "Operational systems aligned with international trade standards.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4",
+  },
+];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      /* ================= HERO TITLE ================= */
       gsap.from(".title-line", {
         opacity: 0,
         y: 40,
@@ -63,32 +60,131 @@ export default function HomePage() {
         ease: "power3.out",
       });
 
-      const products = [
-        product1Ref.current,
-        product2Ref.current,
-        product3Ref.current,
-        product4Ref.current,
-      ];
-
-      products.forEach((el, i) => {
+      /* ================= FLOATING PRODUCTS ================= */
+      productRefs.current.forEach((el, i) => {
         if (!el) return;
+
         gsap.from(el, {
           opacity: 0,
-          scale: 0.8,
-          duration: 1.2,
-          delay: 0.4 + i * 0.15,
-          ease: "back.out(1.7)",
+          scale: 0.9,
+          duration: 1,
+          delay: 0.3 + i * 0.12,
+          ease: "power3.out",
         });
 
         gsap.to(el, {
-          y: -15,
-          duration: 2.5 + i * 0.3,
+          y: -16,
+          duration: 2.5 + i * 0.2,
           repeat: -1,
           yoyo: true,
           ease: "sine.inOut",
         });
       });
-    }, heroRef);
+
+      /* ================= SUB HEADLINE ================= */
+      gsap.from(".sub-text", {
+        scrollTrigger: {
+          trigger: subHeadlineRef.current,
+          start: "top 80%",
+        },
+        y: 40,
+        opacity: 0,
+        duration: 1.1,
+        ease: "power3.out",
+      });
+
+      /* ================= STATS COUNT ================= */
+      numbersRef.current.forEach((el) => {
+        if (!el) return;
+
+        gsap.fromTo(
+          el,
+          { innerText: 0 },
+          {
+            innerText: el.dataset.target,
+            duration: 2,
+            ease: "power1.out",
+            snap: { innerText: 1 },
+            scrollTrigger: {
+              trigger: statsRef.current,
+              start: "top 75%",
+            },
+          }
+        );
+      });
+
+      /* ================= STATS FADE ================= */
+      gsap.from(".stats-title, .stats-desc, .stat-item", {
+        scrollTrigger: {
+          trigger: statsRef.current,
+          start: "top 80%",
+        },
+        opacity: 0,
+        y: 30,
+        stagger: 0.15,
+        duration: 1,
+        ease: "power3.out",
+      });
+      /* ================= VIDEO SLIDER ================= */
+const slides = gsap.utils.toArray(".video-slide");
+
+gsap.to(videoTrackRef.current, {
+  xPercent: -100 * (slides.length - 1),
+  ease: "none",
+  scrollTrigger: {
+    trigger: videoSectionRef.current,
+    pin: true,
+    scrub: 1,
+    start: "top top",
+    end: () => "+=" + window.innerWidth * slides.length,
+    onUpdate: (self) => {
+      const index = Math.round(self.progress * (slides.length - 1));
+      const current = slides[index];
+
+      if (current) {
+        gsap.to(videoTitleRef.current, {
+          textContent: current.dataset.title,
+          duration: 0.4,
+          ease: "power2.out",
+        });
+
+        gsap.to(videoSubtitleRef.current, {
+          textContent: current.dataset.desc,
+          duration: 0.4,
+          ease: "power2.out",
+        });
+      }
+    },
+  },
+});
+
+/* autoplay video saat aktif */
+slides.forEach((slide) => {
+  const video = slide.querySelector("video");
+  ScrollTrigger.create({
+    trigger: slide,
+    start: "left center",
+    onEnter: () => video.play(),
+    onLeave: () => video.pause(),
+    onEnterBack: () => video.play(),
+    onLeaveBack: () => video.pause(),
+  });
+});
+
+
+      /* ================= QUALITY CARDS ================= */
+      gsap.from(".quality-card", {
+        scrollTrigger: {
+          trigger: qualityRef.current,
+          start: "top 80%",
+        },
+        opacity: 0,
+        y: 40,
+        duration: 0.9,
+        stagger: 0.12,
+        ease: "power3.out",
+      });
+    });
 
     return () => ctx.revert();
   }, []);
@@ -97,127 +193,166 @@ export default function HomePage() {
     <div className="home-container">
       <Header />
 
-     <div ref={heroRef} className="hero">
-  <div ref={product1Ref} className="product product-1">
-    <img src="/src/assets/gambar1.png" alt="Product 1" />
-  </div>
-
-  <div ref={product2Ref} className="product product-2">
-    <img src="/src/assets/gambar2.png" alt="Product 2" />
-  </div>
-
-  <div ref={product3Ref} className="product product-3">
-    <img src="/src/assets/gambar3.png" alt="Product 3" />
-  </div>
-
-  <div ref={product4Ref} className="product product-4">
-    <img src="/src/assets/gambar4.png" alt="Product 4" />
-  </div>
-
-  <div className="title">
-    <div className="title-line">TRANSFORM YOUR</div>
-    <div className="title-highlight title-line">HOOKAH ENJOYMENT</div>
-
-    {/* 🔥 ACTION BUTTON */}
-    <button
-      className="hero-btn"
-      onClick={() => {
-        document
-          .querySelector(".natural-section")
-          ?.scrollIntoView({ behavior: "smooth" });
-      }}
-    >
-      Pelajari Lebih Lanjut →
-    </button>
-  </div>
-</div>
-
-
-      {/* <div className="product-cta">
-        <div className="cta-title title-line">PREMIUM COCONUT</div>
-        <div className="cta-subtitle title-highlight title-line">
-          CHARHOAL BRIQUETTES
-        </div>
-        <button className="cta-button">GET IT NOW</button>
-        <img className="product-display" src={dummyHome} alt="" />
-      </div> */}
-
-     <div className="natural-section">
-  <div className="natural-left">
-    <span className="natural-label">100% NATURAL</span>
-
-    <h2 className="natural-title">
-      Premium Coconut <br /> Charcoal Briquettes
-    </h2>
-
-    <p className="natural-desc">
-      Made from selected coconut shells with high carbon content.
-      Produces long-lasting heat, low ash, odorless and smokeless.
-    </p>
-
-    <div className="natural-features">
-      <div className="feature-item">
-        <img src={coconutShell} alt="" />
-        <span>Coconut Shell</span>
-      </div>
-
-      <div className="feature-item">
-        <img src={briquetteAsh} alt="" />
-        <span>Low Ash</span>
-      </div>
-
-      <div className="feature-item">
-        <img src={exportQualityBadge} alt="" />
-        <span>Export Quality</span>
-      </div>
-    </div>
-
-    <button className="natural-btn">Request Quote</button>
-    <small className="minimum-order">Minimum order available</small>
-  </div>
-
-  <div className="natural-right">
-    <img className="briquette-main" src={briquette} alt="" />
-    <img className="briquette-float" src={briquette} alt="" />
-  </div>
-</div>
-
-<BrandEssence />
-     <FeatureCarousel features={features} />
-
-      <div className="contact-us-area">
-        <div className="contact-details">
-          <h2>Contact Us</h2>
-          <p className="subtitle">
-            Email, phone, or fill out the form to collaborate with PT Cocoager
-            Indonesia
-          </p>
-
-          <p className="link">cocoager@gmail.com</p>
-          <p className="phone">(0123) 977-123-126</p>
-          <p className="support">Customer Support</p>
-        </div>
-
-        <div className="contact-box">
-          <h3>Get in Touch</h3>
-
-          <div className="form-row">
-            <input type="text" placeholder="First Name" />
-            <input type="text" placeholder="Last Name" />
-          </div>
-
-          <div className="form-row">
-            <input type="email" placeholder="Email" />
-            <input type="tel" placeholder="Phone Number" />
-          </div>
-
-          <textarea placeholder="How we can help?" />
-
-          <button className="submit-btn">
-            Check <span>→</span>
+      {/* ================= BANNER ================= */}
+      <section className="top-banner">
+        <img src="/src/assets/banner.JPG" alt="AGER Banner" />
+        <div className="banner-overlay">
+          <h1 className="premium">Premium</h1>
+        <h2 className="title">Coconut Charcoal</h2>
+        <p className="subtitle">
+          High-quality charcoal made from 100% coconut shells
+        </p>
+          <button className="btn-know-more">
+            <span>Know More</span>
+            <span className="arrow">→</span>
           </button>
         </div>
-      </div>
+      </section>
+
+      {/* ================= HERO ================= */}
+    
+
+      {/* ================= SUB HEADLINE ================= */}
+      <section className="sub-headline" ref={subHeadlineRef}>
+        <div className="sub-headline-inner">
+          <p className="sub-text">
+            Delivering consistent quality through an integrated production
+            system, strict quality control, and large-scale manufacturing
+            capacity for global markets.
+          </p>
+        </div>
+      </section>
+
+      {/* ================= STATS ================= */}
+      <section className="stats-section" ref={statsRef}>
+        <img src="/src/assets/briquette.png" className="stats-float left" alt="" />
+        <img src="/src/assets/briquette.png" className="stats-float right" alt="" />
+
+        <div className="stats-content">
+          <h2 className="stats-title">Our Capability</h2>
+          <p className="stats-desc">
+            PT. Coco Ager Indonesia is an export-oriented manufacturer
+            specializing in premium coconut shell shisha briquettes.
+          </p>
+
+          <div className="stats-grid">
+            {[
+              { value: 20, label: "Years Experience", suffix: "+" },
+              { value: 10000, label: "Production Area", suffix: " m²" },
+              { value: 500, label: "Employees", suffix: "+" },
+            ].map((item, i) => (
+              <div className="stat-item" key={i}>
+                <h3>
+                  <span
+                    ref={(el) => (numbersRef.current[i] = el)}
+                    data-target={item.value}
+                  >
+                    0
+                  </span>
+                  {item.suffix}
+                </h3>
+                <p>{item.label}</p>
+              </div>
+            ))}
+            <div className="stat-item">
+              <h3>Worldwide</h3>
+              <p>Market Focus</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
+      {/* ================= QUALITY COMMITMENT ================= */}
+      <section className="quality-section" ref={qualityRef}>
+        <h2 className="quality-title">Our Quality Commitment</h2>
+
+        <p className="quality-subtitle">
+          Our shisha briquettes are manufactured with a strong commitment to
+          natural sourcing, environmental responsibility, and consistent
+          performance.
+        </p>
+
+        <div className="quality-grid">
+          {[
+            ["🌴", "100% Natural Coconut Shell", "Produced from selected coconut shells without additives."],
+            ["🌱", "No Trees Cut", "Raw materials sourced from coconut shell waste."],
+            ["♻️", "Eco-Friendly Process", "Production designed to minimize waste and emissions."],
+            ["🔥", "Long Lasting Burn", "Extended burning time with stable heat output."],
+            ["🧪", "Low Ash Content", "Clean combustion with minimal ash residue."],
+            ["⭐", "Premium Quality Grade", "Consistent size and performance for global standards."],
+          ].map((item, i) => (
+            <div className="quality-card" key={i}>
+              <span className="quality-icon">{item[0]}</span>
+              <h3>{item[1]}</h3>
+              <p>{item[2]}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+<section className="video-slider-section">
+  <h2 className="video-section-title">
+    Built for Consistency. Designed for Global Demand.
+  </h2>
+
+  <div className="video-slider-wrapper">
+    {/* LEFT ARROW */}
+    <button
+      className="slider-arrow left"
+      onClick={() =>
+        setActiveSlide(
+          activeSlide === 0 ? slides.length - 1 : activeSlide - 1
+        )
+      }
+      aria-label="Previous slide"
+    >
+      ‹
+    </button>
+
+    {/* SLIDER CONTAINER */}
+    <div className="video-slider-container">
+      {slides.map((item, index) => (
+        <div 
+          className={`video-slide ${activeSlide === index ? 'active' : ''}`}
+          key={index}
+          style={{
+            display: activeSlide === index ? 'grid' : 'none'
+          }}
+        >
+          <div className="video-text">
+            <h3>{item.title}</h3>
+            <p>{item.desc}</p>
+          </div>
+
+          <div className="video-box">
+            <video
+              src={item.video}
+              muted
+              autoPlay
+              loop
+              playsInline
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* RIGHT ARROW */}
+    <button
+      className="slider-arrow right"
+      onClick={() =>
+        setActiveSlide(
+          activeSlide === slides.length - 1 ? 0 : activeSlide + 1
+        )
+      }
+      aria-label="Next slide"
+    >
+      ›
+    </button>
+  </div>
+</section>
+
 
       <Footer />
     </div>

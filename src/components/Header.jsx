@@ -6,7 +6,7 @@ export default function Header() {
   const navigate = useNavigate();
 
   return (
-    <header className="header">
+    <header className="header header-fixed">
       <img
         src="/src/assets/logo.png"
         alt="AGER Logo"

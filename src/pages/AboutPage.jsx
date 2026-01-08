@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import Header from "../components/Header";
-import ProductionSection from "../components/ProductionSection";
 import "./about.css";
 
 import gsap from "gsap";
@@ -14,32 +13,33 @@ const AboutPage = () => {
   const numbersRef = useRef([]);
 
   useEffect(() => {
+    if (!statsRef.current) return;
+
     /* ================= FLOATING IMAGE ================= */
-    gsap.set(".floating.left", { rotation: 15 });
-    gsap.set(".floating.right", { rotation: -9 });
+   gsap.to(".floating.left", {
+  y: -25,          // lebih tinggi
+  rotation: -6,
+  duration: 3.5,   // lebih lambat
+  ease: "power1.inOut",
+  yoyo: true,
+  repeat: -1,
+});
 
-    gsap.to(".floating.left", {
-      y: -25,
-      rotation: 6,
-      duration: 3.5,
-      ease: "power1.inOut",
-      yoyo: true,
-      repeat: -1,
-    });
+// IMAGE KANAN
+gsap.to(".floating.right", {
+  y: -35,          // lebih rendah
+  rotation: 9,
+  duration: 2.6,   // lebih cepat
+  delay: 0.1,      // beda fase
+  ease: "power1.inOut",
+  yoyo: true,
+  repeat: -1,
+});
 
-    gsap.to(".floating.right", {
-      y: -35,
-      rotation: 9,
-      duration: 2.6,
-      delay: 0.1,
-      ease: "power1.inOut",
-      yoyo: true,
-      repeat: -1,
-    });
-
-    /* ================= COUNTER ================= */
+    /* ================= COUNTER NUMBER ================= */
     numbersRef.current.forEach((el) => {
       if (!el) return;
+
       const target = Number(el.dataset.target);
 
       gsap.fromTo(
@@ -62,6 +62,7 @@ const AboutPage = () => {
 
   return (
     <div className="home-container">
+      {/* ================= HEADER ================= */}
       <Header />
 
       {/* ================= HERO ================= */}
@@ -76,7 +77,7 @@ const AboutPage = () => {
         />
         <div className="about-overlay" />
         <div className="about-hero-content">
-          <h1>ABOUT US</h1>
+          <h1>ABOUT&nbsp;US</h1>
           <p>
             To be the world's leading supplier of sustainable and high-quality
             charcoal.
@@ -91,19 +92,21 @@ const AboutPage = () => {
 
           <p className="why-description">
             Established in 2020, PT COCO AGER INDONESIA is a leading manufacturer
-            and exporter of high-quality hookah and BBQ charcoal.
+            and exporter of high-quality hookah and BBQ charcoal. We are
+            committed to innovation, sustainability, and delivering premium
+            products worldwide.
           </p>
 
           <div className="why-features">
             <div className="feature-box">PREMIUM QUALITY</div>
-            <div className="feature-box">CUSTOM ORDER</div>
+            <div className="feature-box">CUSTOMIZATION ORDER</div>
             <div className="feature-box">COMPETITIVE PRICE</div>
-            <div className="feature-box">CERTIFIED PRODUCT</div>
+            <div className="feature-box">PRODUCT CERTIFICATE</div>
             <div className="feature-box">FAST PRODUCTION</div>
           </div>
 
           <div className="why-image">
-            <img src="/src/assets/dummy-home.png" alt="Why Us" />
+            <img src="src/assets/dummy-home.png" alt="Why Us" />
           </div>
         </div>
       </section>
@@ -112,7 +115,7 @@ const AboutPage = () => {
       <section className="history-section" ref={historyRef}>
         <div className="history-marquee">
           <div className="marquee-track">
-            {Array.from({ length: 20 }).map((_, i) => (
+            {Array.from({ length: 24 }).map((_, i) => (
               <span key={i}>AGER</span>
             ))}
           </div>
@@ -122,22 +125,34 @@ const AboutPage = () => {
           <div className="history-grid">
             <div className="history-item">
               <h3>History</h3>
-              <p>Over 5 years of experience in premium charcoal manufacturing.</p>
+              <p>
+                A company with more than 5 years of experience in manufacturing
+                premium coconut charcoal for global markets.
+              </p>
             </div>
 
             <div className="history-item">
               <h3>Integration</h3>
-              <p>Fully integrated production from raw material to export.</p>
+              <p>
+                A fully integrated enterprise where brand excellence and
+                in-house manufacturing operate as one.
+              </p>
             </div>
 
             <div className="history-item">
               <h3>Global Reach</h3>
-              <p>Serving customers across 10+ countries worldwide.</p>
+              <p>
+                A strong international footprint with offices and
+                representatives across 4 continents and 6 countries.
+              </p>
             </div>
 
             <div className="history-item">
               <h3>Commitment</h3>
-              <p>Consistent quality and long-term partnership focus.</p>
+              <p>
+                Unwavering dedication to delivering consistent quality and
+                products our customers truly deserve.
+              </p>
             </div>
           </div>
         </div>
@@ -145,64 +160,77 @@ const AboutPage = () => {
 
       {/* ================= VISION & MISSION ================= */}
       <section className="vision-mission-section">
+        <div className="vm-title-wrapper">
+          <h2 className="vm-vision">VISION</h2>
+          <div className="vm-mission-box">
+            <span>MISSION</span>
+          </div>
+        </div>
+
         <div className="vision-mission-container">
           <div className="vision-box">
-            <h3>VISION</h3>
+            <h3>OUR VISION</h3>
             <p>
-              To become a world-class manufacturer of premium coconut charcoal.
+              To become a world-class manufacturer of premium coconut charcoal
+              briquettes, driven by innovation, sustainability, and continuous
+              improvement.
             </p>
           </div>
 
+          <div className="vision-divider" />
+
           <div className="mission-box">
-            <h3>MISSION</h3>
+            <h3>OUR MISSION</h3>
             <ul>
-              <li>Strict quality control</li>
-              <li>Modern machinery</li>
-              <li>Sustainable production</li>
-              <li>Global expansion</li>
+              <li>Deliver premium-quality briquettes with strict quality control.</li>
+              <li>Utilize modern machinery and advanced technology.</li>
+              <li>Promote sustainability and responsible manufacturing.</li>
+              <li>Expand production capacity annually.</li>
+              <li>Build long-term global partnerships.</li>
             </ul>
           </div>
         </div>
       </section>
 
-      {/* ================= STATS ================= */}
-      <section className="stats-section" ref={statsRef}>
-        <img
-          src="/src/assets/gambar2.png"
-          className="stats-image floating left"
-          alt=""
-        />
-        <img
-          src="/src/assets/gambar4.png"
-          className="stats-image floating right"
-          alt=""
-        />
+      {/* ================= STATISTICS ================= */}
+     <section className="stats-section" ref={statsRef}>
+  {/* BACKGROUND IMAGES */}
+  <img
+    src="/src/assets/gambar2.png"
+    alt=""
+    className="stats-image floating left"
+  />
 
-        <div className="stats-grid">
-          {[
-            { value: 10, label: "Country", suffix: "+" },
-            { value: 8000, label: "Land Area", suffix: " m²" },
-            { value: 5, label: "Experience", suffix: "+" },
-            { value: 600, label: "Capacity", suffix: " tons" },
-          ].map((item, i) => (
-            <div className="stat-item" key={i}>
-              <h3>
-                <span
-                  ref={(el) => (numbersRef.current[i] = el)}
-                  data-target={item.value}
-                >
-                  0
-                </span>
-                {item.suffix}
-              </h3>
-              <p>{item.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+  <img
+    src="/src/assets/gambar4.png"
+    alt=""
+    className="stats-image floating right"
+  />
 
-      {/* ================= OUR PRODUCTION ================= */}
-      <ProductionSection />
+  {/* CONTENT */}
+  <div className="stats-grid">
+    {[
+      { value: 10, label: "Country", suffix: "+" },
+      { value: 8000, label: "Land Area", suffix: " m²" },
+      { value: 5, label: "Experience", suffix: "+" },
+      { value: 600, label: "Production Capacity", suffix: " tons" },
+    ].map((item, i) => (
+      <div className="stat-item" key={i}>
+        <h3>
+          <span
+            ref={(el) => (numbersRef.current[i] = el)}
+            data-target={item.value}
+          >
+            0
+          </span>
+          {item.suffix}
+        </h3>
+        <p>{item.label}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
     </div>
   );
 };
