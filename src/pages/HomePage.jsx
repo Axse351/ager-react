@@ -197,7 +197,7 @@ slides.forEach((slide) => {
       <section className="top-banner">
         <img src="/src/assets/banner.JPG" alt="AGER Banner" />
         <div className="banner-overlay">
-          <h1 className="premium">Premium</h1>
+          <h1 className="premium">GW CEO</h1>
         <h2 className="title">Coconut Charcoal</h2>
         <p className="subtitle">
           High-quality charcoal made from 100% coconut shells
