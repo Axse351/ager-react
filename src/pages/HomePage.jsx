@@ -9,11 +9,11 @@ import coconutShell from "../assets/coconut-shell.png"; // sesuaikan nama file
 import briquetteAsh from "../assets/briquette-ash.png"; // sesuaikan nama file
 import briquette from "../assets/briquette.png";
 import exportQualityBadge from "../assets/export-quality-badge.svg";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HomePage() {
@@ -21,41 +21,41 @@ export default function HomePage() {
   const subHeadlineRef = useRef(null);
   const statsRef = useRef(null);
   const qualityRef = useRef(null);
-const videoSectionRef = useRef(null);
-const videoTrackRef = useRef(null);
-const videoTitleRef = useRef(null);
-const videoSubtitleRef = useRef(null);
+  const videoSectionRef = useRef(null);
+  const videoTrackRef = useRef(null);
+  const videoTitleRef = useRef(null);
+  const videoSubtitleRef = useRef(null);
   const numbersRef = useRef([]);
   const productRefs = useRef([]);
-const [activeSlide, setActiveSlide] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(0);
 
-const slides = [
+  const slides = [
     {
       title: "Integrated Production System",
       desc: "End-to-end manufacturing control, ensuring consistency from raw material selection to finished product.",
-      video: "/video/vid1.mp4",
+      video: "https://www.w3schools.com/html/mov_bbb.mp4",
     },
     {
       title: "Strict Quality Standards",
       desc: "Multi-stage inspection processes to maintain stable performance and uniform specifications.",
-      video: "/video/vid2.mp4",
+      video: "https://www.w3schools.com/html/movie.mp4",
     },
     {
       title: "Advanced Manufacturing Technology",
-      desc: "Continuously upgraded machinery to enhance efficiency, precision, and product reliability.",
-      video: "/video/manufacturing-tech.mp4",
+      desc: "Continuously upgraded machinery to enhance efficiency, precision, and reliability.",
+      video: "https://www.w3schools.com/html/mov_bbb.mp4",
     },
     {
       title: "Large-Scale Production Capacity",
-      desc: "A production facility designed to support long-term contracts and high-volume export requirements.",
-      video: "/video/production-capacity.mp4",
+      desc: "Designed to support long-term contracts and high-volume export requirements.",
+      video: "https://www.w3schools.com/html/movie.mp4",
     },
     {
       title: "Export-Oriented Management",
-      desc: "Operational systems aligned with international trade standards and global market expectations.",
-      video: "/video/export-management.mp4",
+      desc: "Operational systems aligned with international trade standards.",
+      video: "https://www.w3schools.com/html/mov_bbb.mp4",
     },
-];
+  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -117,7 +117,7 @@ const slides = [
               trigger: statsRef.current,
               start: "top 75%",
             },
-          }
+          },
         );
       });
 
@@ -134,51 +134,50 @@ const slides = [
         ease: "power3.out",
       });
       /* ================= VIDEO SLIDER ================= */
-const slides = gsap.utils.toArray(".video-slide");
+      const slides = gsap.utils.toArray(".video-slide");
 
-gsap.to(videoTrackRef.current, {
-  xPercent: -100 * (slides.length - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: videoSectionRef.current,
-    pin: true,
-    scrub: 1,
-    start: "top top",
-    end: () => "+=" + window.innerWidth * slides.length,
-    onUpdate: (self) => {
-      const index = Math.round(self.progress * (slides.length - 1));
-      const current = slides[index];
+      gsap.to(videoTrackRef.current, {
+        xPercent: -100 * (slides.length - 1),
+        ease: "none",
+        scrollTrigger: {
+          trigger: videoSectionRef.current,
+          pin: true,
+          scrub: 1,
+          start: "top top",
+          end: () => "+=" + window.innerWidth * slides.length,
+          onUpdate: (self) => {
+            const index = Math.round(self.progress * (slides.length - 1));
+            const current = slides[index];
 
-      if (current) {
-        gsap.to(videoTitleRef.current, {
-          textContent: current.dataset.title,
-          duration: 0.4,
-          ease: "power2.out",
+            if (current) {
+              gsap.to(videoTitleRef.current, {
+                textContent: current.dataset.title,
+                duration: 0.4,
+                ease: "power2.out",
+              });
+
+              gsap.to(videoSubtitleRef.current, {
+                textContent: current.dataset.desc,
+                duration: 0.4,
+                ease: "power2.out",
+              });
+            }
+          },
+        },
+      });
+
+      /* autoplay video saat aktif */
+      slides.forEach((slide) => {
+        const video = slide.querySelector("video");
+        ScrollTrigger.create({
+          trigger: slide,
+          start: "left center",
+          onEnter: () => video.play(),
+          onLeave: () => video.pause(),
+          onEnterBack: () => video.play(),
+          onLeaveBack: () => video.pause(),
         });
-
-        gsap.to(videoSubtitleRef.current, {
-          textContent: current.dataset.desc,
-          duration: 0.4,
-          ease: "power2.out",
-        });
-      }
-    },
-  },
-});
-
-/* autoplay video saat aktif */
-slides.forEach((slide) => {
-  const video = slide.querySelector("video");
-  ScrollTrigger.create({
-    trigger: slide,
-    start: "left center",
-    onEnter: () => video.play(),
-    onLeave: () => video.pause(),
-    onEnterBack: () => video.play(),
-    onLeaveBack: () => video.pause(),
-  });
-});
-
+      });
 
       /* ================= QUALITY CARDS ================= */
       gsap.from(".quality-card", {
@@ -206,10 +205,10 @@ slides.forEach((slide) => {
         <img src="/src/assets/banner.JPG" alt="AGER Banner" />
         <div className="banner-overlay">
           <h1 className="premium">Premium</h1>
-        <h2 className="title">Coconut Charcoal</h2>
-        <p className="subtitle">
-          High-quality charcoal made from 100% coconut shells
-        </p>
+          <h2 className="title">Coconut Charcoal</h2>
+          <p className="subtitle">
+            High-quality charcoal made from 100% coconut shells
+          </p>
           <button className="btn-know-more">
             <span>Know More</span>
             <span className="arrow">→</span>
@@ -218,7 +217,6 @@ slides.forEach((slide) => {
       </section>
 
       {/* ================= HERO ================= */}
-    
 
       {/* ================= SUB HEADLINE ================= */}
       <section className="sub-headline" ref={subHeadlineRef}>
@@ -231,50 +229,58 @@ slides.forEach((slide) => {
         </div>
       </section>
 
-    <div className="natural-section">
-  <div className="natural-left">
-    <span className="natural-label">100% NATURAL</span>
+      <div className="natural-section">
+        <div className="natural-left">
+          <span className="natural-label">100% NATURAL</span>
 
-    <h2 className="natural-title">
-      Premium Coconut <br /> Charcoal Briquettes
-    </h2>
+          <h2 className="natural-title">
+            Premium Coconut <br /> Charcoal Briquettes
+          </h2>
 
-    <p className="natural-desc">
-      Made from selected coconut shells with high carbon content.
-      Produces long-lasting heat, low ash, odorless and smokeless.
-    </p>
+          <p className="natural-desc">
+            Made from selected coconut shells with high carbon content. Produces
+            long-lasting heat, low ash, odorless and smokeless.
+          </p>
 
-    <div className="natural-features">
-      <div className="feature-item">
-        <img src={coconutShell} alt="Coconut Shell" />
-        <span>Coconut Shell</span>
+          <div className="natural-features">
+            <div className="feature-item">
+              <img src={coconutShell} alt="Coconut Shell" />
+              <span>Coconut Shell</span>
+            </div>
+
+            <div className="feature-item">
+              <img src={briquetteAsh} alt="Low Ash" />
+              <span>Low Ash</span>
+            </div>
+
+            <div className="feature-item">
+              <img src={exportQualityBadge} alt="Export Quality" />
+              <span>Export Quality</span>
+            </div>
+          </div>
+
+          <button className="natural-btn">Request Quote</button>
+          <small className="minimum-order">Minimum order available</small>
+        </div>
+
+        <div className="natural-right">
+          <img className="briquette-main" src={briquette} alt="Briquette" />
+          <img className="briquette-float" src={briquette} alt="Briquette" />
+        </div>
       </div>
-
-      <div className="feature-item">
-        <img src={briquetteAsh} alt="Low Ash" />
-        <span>Low Ash</span>
-      </div>
-
-      <div className="feature-item">
-        <img src={exportQualityBadge} alt="Export Quality" />
-        <span>Export Quality</span>
-      </div>
-    </div>
-
-    <button className="natural-btn">Request Quote</button>
-    <small className="minimum-order">Minimum order available</small>
-  </div>
-
-  <div className="natural-right">
-    <img className="briquette-main" src={briquette} alt="Briquette" />
-    <img className="briquette-float" src={briquette} alt="Briquette" />
-  </div>
-</div>
 
       {/* ================= STATS ================= */}
       <section className="stats-section" ref={statsRef}>
-        <img src="/src/assets/briquette.png" className="stats-float left" alt="" />
-        <img src="/src/assets/briquette.png" className="stats-float right" alt="" />
+        <img
+          src="/src/assets/briquette.png"
+          className="stats-float left"
+          alt=""
+        />
+        <img
+          src="/src/assets/briquette.png"
+          className="stats-float right"
+          alt=""
+        />
 
         <div className="stats-content">
           <h2 className="stats-title">Our Capability</h2>
@@ -310,8 +316,6 @@ slides.forEach((slide) => {
         </div>
       </section>
 
-      
-
       {/* ================= QUALITY COMMITMENT ================= */}
       <section className="quality-section" ref={qualityRef}>
         <h2 className="quality-title">Our Quality Commitment</h2>
@@ -324,12 +328,36 @@ slides.forEach((slide) => {
 
         <div className="quality-grid">
           {[
-            ["🌴", "100% Natural Coconut Shell", "Produced from selected coconut shells without additives."],
-            ["🌱", "No Trees Cut", "Raw materials sourced from coconut shell waste."],
-            ["♻️", "Eco-Friendly Process", "Production designed to minimize waste and emissions."],
-            ["🔥", "Long Lasting Burn", "Extended burning time with stable heat output."],
-            ["🧪", "Low Ash Content", "Clean combustion with minimal ash residue."],
-            ["⭐", "Premium Quality Grade", "Consistent size and performance for global standards."],
+            [
+              "🌴",
+              "100% Natural Coconut Shell",
+              "Produced from selected coconut shells without additives.",
+            ],
+            [
+              "🌱",
+              "No Trees Cut",
+              "Raw materials sourced from coconut shell waste.",
+            ],
+            [
+              "♻️",
+              "Eco-Friendly Process",
+              "Production designed to minimize waste and emissions.",
+            ],
+            [
+              "🔥",
+              "Long Lasting Burn",
+              "Extended burning time with stable heat output.",
+            ],
+            [
+              "🧪",
+              "Low Ash Content",
+              "Clean combustion with minimal ash residue.",
+            ],
+            [
+              "⭐",
+              "Premium Quality Grade",
+              "Consistent size and performance for global standards.",
+            ],
           ].map((item, i) => (
             <div className="quality-card" key={i}>
               <span className="quality-icon">{item[0]}</span>
@@ -339,52 +367,63 @@ slides.forEach((slide) => {
           ))}
         </div>
       </section>
-
-   <section className="video-slider-section">
+      <section className="video-slider-section">
         <h2 className="video-section-title">
           Built for Consistency. Designed for Global Demand.
         </h2>
 
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          navigation
-          pagination={{ 
-            clickable: true,
-            dynamicBullets: true 
-          }}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
-          spaceBetween={30}
-          slidesPerView={1}
-          loop={true}
-          className="video-swiper"
-        >
-          {slides.map((item, index) => (
-            <SwiperSlide key={index}>
-              <div className="video-slide-content">
-                <div className="video-text-box">
-                  <h3 className="slide-title">{item.title}</h3>
-                  <p className="slide-desc">{item.desc}</p>
+        <div className="video-slider-wrapper">
+          {/* LEFT ARROW */}
+          <button
+            className="slider-arrow left"
+            onClick={() =>
+              setActiveSlide(
+                activeSlide === 0 ? slides.length - 1 : activeSlide - 1,
+              )
+            }
+            aria-label="Previous slide"
+          >
+            ‹
+          </button>
+
+          {/* SLIDER CONTAINER */}
+          <div className="video-slider-container">
+            {slides.map((item, index) => (
+              <div
+                className={`video-slide ${
+                  activeSlide === index ? "active" : ""
+                }`}
+                key={index}
+                style={{
+                  display: activeSlide === index ? "grid" : "none",
+                }}
+              >
+                <div className="video-text">
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
                 </div>
 
-                <div className="video-container">
-                  <video
-                    src={item.video}
-                    muted
-                    autoPlay
-                    loop
-                    playsInline
-                    className="slide-video"
-                  />
+                <div className="video-box">
+                  <video src={item.video} muted autoPlay loop playsInline />
                 </div>
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </section>
+            ))}
+          </div>
 
+          {/* RIGHT ARROW */}
+          <button
+            className="slider-arrow right"
+            onClick={() =>
+              setActiveSlide(
+                activeSlide === slides.length - 1 ? 0 : activeSlide + 1,
+              )
+            }
+            aria-label="Next slide"
+          >
+            ›
+          </button>
+        </div>
+      </section>
 
       <Footer />
     </div>
