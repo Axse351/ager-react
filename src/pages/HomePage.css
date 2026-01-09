@@ -393,7 +393,7 @@
   letter-spacing: 2px;          /* 🔽 refined */
   color: #B6721A;
   text-transform: capitalize;   /* 🔥 bukan uppercase */
-  margin-bottom: 6px;
+  margin-bottom: 1px;
 }
 
 
@@ -404,7 +404,7 @@
   font-weight: 600;
   letter-spacing: 3px;
   color: #845028;
-  margin-bottom: 12px;
+  margin-bottom: 2px;
 }
 
 
@@ -433,7 +433,7 @@
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 1px;
-
+margin-top: -30px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -880,7 +880,7 @@ textarea {
   grid-template-columns: 1.1fr 0.9fr;
   gap: 80px;
   align-items: center;
-  background: #faf8f0;
+  background: #FEE6D8;
 }
 
 /* LEFT */
@@ -1350,7 +1350,7 @@ textarea {
 /* ================= VIDEO SLIDER ================= */
 .video-slider-section {
   padding: 120px 6%;
-  background: #601616;
+  background: #FEE6D8;
   position: relative;
   overflow: hidden;
 }
@@ -1519,65 +1519,136 @@ textarea {
   transform: translateY(-50%) scale(1.05);
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 968px) {
-  .video-slider-container {
-    min-height: 600px;
-  }
-
-  .video-slide {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 40px 30px;
-  }
-
-  .video-text {
-    padding-right: 0;
-    text-align: center;
-  }
-
-  .video-section-title {
-    font-size: 32px;
-  }
-
-  .slider-arrow {
-    width: 48px;
-    height: 48px;
-    font-size: 28px;
-  }
-
-  .slider-arrow.left {
-    left: 10px;
-  }
-
-  .slider-arrow.right {
-    right: 10px;
-  }
+/* ================= VIDEO SLIDER SECTION ================= */
+.video-slider-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #FEE6D8 0%, #FEE6D8 100%);
 }
 
-@media (max-width: 640px) {
-  .video-slider-section {
-    padding: 80px 4%;
-  }
+.video-section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 60px;
+  line-height: 1.3;
+}
 
-  .video-slider-container {
-    min-height: 550px;
-  }
+.video-swiper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 60px;
+}
 
-  .video-section-title {
-    font-size: 26px;
-    margin-bottom: 40px;
-  }
+.video-slide-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  gap: 30px;
+}
 
-  .video-slide {
+.video-text-box {
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+.slide-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.slide-desc {
+  font-size: 1.1rem;
+  color: #5a6c7d;
+  line-height: 1.8;
+}
+
+.video-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 700px;
+  /* batasi lebar video */
+  aspect-ratio: 16/9;
+}
+
+.slide-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Swiper Navigation Buttons */
+.video-swiper .swiper-button-next,
+.video-swiper .swiper-button-prev {
+  background: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.video-swiper .swiper-button-next:after,
+.video-swiper .swiper-button-prev:after {
+  font-size: 20px;
+  font-weight: 900;
+  color: #2c3e50;
+}
+
+.video-swiper .swiper-button-next:hover,
+.video-swiper .swiper-button-prev:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Swiper Pagination */
+.video-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #2c3e50;
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+.video-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 30px;
+  border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .video-slide-content {
     padding: 30px 20px;
   }
 
-  .video-text h3 {
-    font-size: 24px;
+  .slide-title {
+    font-size: 1.5rem;
   }
 
-  .video-text p {
-    font-size: 15px;
+  .slide-desc {
+    font-size: 1rem;
+  }
+
+  .video-section-title {
+    font-size: 1.8rem;
+  }
+
+  .video-swiper {
+    padding: 20px 40px;
+  }
+
+  .video-container {
+    max-width: 100%;
   }
 }

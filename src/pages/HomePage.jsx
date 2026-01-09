@@ -5,7 +5,15 @@ import "./HomePage.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useState } from "react";
-
+import coconutShell from "../assets/coconut-shell.png"; // sesuaikan nama file
+import briquetteAsh from "../assets/briquette-ash.png"; // sesuaikan nama file
+import briquette from "../assets/briquette.png";
+import exportQualityBadge from "../assets/export-quality-badge.svg";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HomePage() {
@@ -22,31 +30,31 @@ const videoSubtitleRef = useRef(null);
 const [activeSlide, setActiveSlide] = useState(0);
 
 const slides = [
-  {
-    title: "Integrated Production System",
-    desc: "End-to-end manufacturing control, ensuring consistency from raw material selection to finished product.",
-    video: "https://www.w3schools.com/html/mov_bbb.mp4",
-  },
-  {
-    title: "Strict Quality Standards",
-    desc: "Multi-stage inspection processes to maintain stable performance and uniform specifications.",
-    video: "https://www.w3schools.com/html/movie.mp4",
-  },
-  {
-    title: "Advanced Manufacturing Technology",
-    desc: "Continuously upgraded machinery to enhance efficiency, precision, and reliability.",
-    video: "https://www.w3schools.com/html/mov_bbb.mp4",
-  },
-  {
-    title: "Large-Scale Production Capacity",
-    desc: "Designed to support long-term contracts and high-volume export requirements.",
-    video: "https://www.w3schools.com/html/movie.mp4",
-  },
-  {
-    title: "Export-Oriented Management",
-    desc: "Operational systems aligned with international trade standards.",
-    video: "https://www.w3schools.com/html/mov_bbb.mp4",
-  },
+    {
+      title: "Integrated Production System",
+      desc: "End-to-end manufacturing control, ensuring consistency from raw material selection to finished product.",
+      video: "/video/vid1.mp4",
+    },
+    {
+      title: "Strict Quality Standards",
+      desc: "Multi-stage inspection processes to maintain stable performance and uniform specifications.",
+      video: "/video/vid2.mp4",
+    },
+    {
+      title: "Advanced Manufacturing Technology",
+      desc: "Continuously upgraded machinery to enhance efficiency, precision, and product reliability.",
+      video: "/video/manufacturing-tech.mp4",
+    },
+    {
+      title: "Large-Scale Production Capacity",
+      desc: "A production facility designed to support long-term contracts and high-volume export requirements.",
+      video: "/video/production-capacity.mp4",
+    },
+    {
+      title: "Export-Oriented Management",
+      desc: "Operational systems aligned with international trade standards and global market expectations.",
+      video: "/video/export-management.mp4",
+    },
 ];
 
   useEffect(() => {
@@ -223,6 +231,46 @@ slides.forEach((slide) => {
         </div>
       </section>
 
+    <div className="natural-section">
+  <div className="natural-left">
+    <span className="natural-label">100% NATURAL</span>
+
+    <h2 className="natural-title">
+      Premium Coconut <br /> Charcoal Briquettes
+    </h2>
+
+    <p className="natural-desc">
+      Made from selected coconut shells with high carbon content.
+      Produces long-lasting heat, low ash, odorless and smokeless.
+    </p>
+
+    <div className="natural-features">
+      <div className="feature-item">
+        <img src={coconutShell} alt="Coconut Shell" />
+        <span>Coconut Shell</span>
+      </div>
+
+      <div className="feature-item">
+        <img src={briquetteAsh} alt="Low Ash" />
+        <span>Low Ash</span>
+      </div>
+
+      <div className="feature-item">
+        <img src={exportQualityBadge} alt="Export Quality" />
+        <span>Export Quality</span>
+      </div>
+    </div>
+
+    <button className="natural-btn">Request Quote</button>
+    <small className="minimum-order">Minimum order available</small>
+  </div>
+
+  <div className="natural-right">
+    <img className="briquette-main" src={briquette} alt="Briquette" />
+    <img className="briquette-float" src={briquette} alt="Briquette" />
+  </div>
+</div>
+
       {/* ================= STATS ================= */}
       <section className="stats-section" ref={statsRef}>
         <img src="/src/assets/briquette.png" className="stats-float left" alt="" />
@@ -291,67 +339,51 @@ slides.forEach((slide) => {
           ))}
         </div>
       </section>
-<section className="video-slider-section">
-  <h2 className="video-section-title">
-    Built for Consistency. Designed for Global Demand.
-  </h2>
 
-  <div className="video-slider-wrapper">
-    {/* LEFT ARROW */}
-    <button
-      className="slider-arrow left"
-      onClick={() =>
-        setActiveSlide(
-          activeSlide === 0 ? slides.length - 1 : activeSlide - 1
-        )
-      }
-      aria-label="Previous slide"
-    >
-      ‹
-    </button>
+   <section className="video-slider-section">
+        <h2 className="video-section-title">
+          Built for Consistency. Designed for Global Demand.
+        </h2>
 
-    {/* SLIDER CONTAINER */}
-    <div className="video-slider-container">
-      {slides.map((item, index) => (
-        <div 
-          className={`video-slide ${activeSlide === index ? 'active' : ''}`}
-          key={index}
-          style={{
-            display: activeSlide === index ? 'grid' : 'none'
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          navigation
+          pagination={{ 
+            clickable: true,
+            dynamicBullets: true 
           }}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          spaceBetween={30}
+          slidesPerView={1}
+          loop={true}
+          className="video-swiper"
         >
-          <div className="video-text">
-            <h3>{item.title}</h3>
-            <p>{item.desc}</p>
-          </div>
+          {slides.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="video-slide-content">
+                <div className="video-text-box">
+                  <h3 className="slide-title">{item.title}</h3>
+                  <p className="slide-desc">{item.desc}</p>
+                </div>
 
-          <div className="video-box">
-            <video
-              src={item.video}
-              muted
-              autoPlay
-              loop
-              playsInline
-            />
-          </div>
-        </div>
-      ))}
-    </div>
-
-    {/* RIGHT ARROW */}
-    <button
-      className="slider-arrow right"
-      onClick={() =>
-        setActiveSlide(
-          activeSlide === slides.length - 1 ? 0 : activeSlide + 1
-        )
-      }
-      aria-label="Next slide"
-    >
-      ›
-    </button>
-  </div>
-</section>
+                <div className="video-container">
+                  <video
+                    src={item.video}
+                    muted
+                    autoPlay
+                    loop
+                    playsInline
+                    className="slide-video"
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
 
 
       <Footer />
