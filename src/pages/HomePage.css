@@ -215,10 +215,12 @@
 }
 
 @keyframes floating {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -245,6 +247,7 @@
     transform: translateY(0);
   }
 }
+
 .export-badge {
   opacity: 0;
   transform: rotate(-8deg) scale(0.9);
@@ -258,6 +261,7 @@
     transform: rotate(0deg) scale(1);
   }
 }
+
 .cta2-button {
   transition:
     transform 0.2s ease,
@@ -278,9 +282,11 @@
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -327,6 +333,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .hero-btn {
   margin-top: 28px;
   padding: 14px 34px;
@@ -376,10 +383,12 @@
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* 🔥 bukan center */
+  justify-content: flex-start;
+  /* 🔥 bukan center */
   align-items: center;
 
-  padding-top: 18vh; /* 🔥 ini kuncinya */
+  padding-top: 18vh;
+  /* 🔥 ini kuncinya */
   color: #fff;
   text-align: center;
 }
@@ -388,19 +397,25 @@
 .banner-overlay h1 {
   font-family: "Playfair Display", serif;
   font-style: italic;
-  font-size: 48px;              /* 🔽 lebih elegan */
-  font-weight: 500;             /* 🔽 lebih tipis */
-  letter-spacing: 2px;          /* 🔽 refined */
+  font-size: 48px;
+  /* 🔽 lebih elegan */
+  font-weight: 500;
+  /* 🔽 lebih tipis */
+  letter-spacing: 2px;
+  /* 🔽 refined */
   color: #B6721A;
-  text-transform: capitalize;   /* 🔥 bukan uppercase */
+  text-transform: capitalize;
+  /* 🔥 bukan uppercase */
   margin-bottom: 1px;
 }
 
 
 .banner-overlay h2 {
   font-family: "Playfair Display", serif;
-  font-style: normal;           /* 🔥 lebih mirip gambar */
-  font-size: 64px;              /* 🔥 dominan */
+  font-style: normal;
+  /* 🔥 lebih mirip gambar */
+  font-size: 64px;
+  /* 🔥 dominan */
   font-weight: 600;
   letter-spacing: 3px;
   color: #845028;
@@ -421,7 +436,7 @@
   color: white;
   font-size: 16px;
   cursor: pointer;
-  
+
 }
 
 .banner-overlay .btn-know-more {
@@ -433,7 +448,7 @@
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 1px;
-margin-top: -30px;
+  margin-top: -30px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -672,14 +687,14 @@ margin-top: -30px;
 }
 
 /* Logo recycle di atas */
-.product-highlights > img:first-child {
+.product-highlights>img:first-child {
   width: 60px;
   margin-bottom: 30px;
   opacity: 0.9;
 }
 
 /* Gambar produk utama */
-.product-highlights > img:nth-child(2) {
+.product-highlights>img:nth-child(2) {
   max-width: 80%;
   height: auto;
   z-index: 2;
@@ -699,7 +714,8 @@ margin-top: -30px;
 
 .product-n-highlights {
   position: absolute;
-  top: 0; /* atau sesuaikan */
+  top: 0;
+  /* atau sesuaikan */
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -1086,6 +1102,7 @@ textarea {
   color: #7a5a3a;
   letter-spacing: 0.6px;
 }
+
 .stats-section {
   position: relative;
   padding: 120px 0;
@@ -1142,9 +1159,11 @@ textarea {
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-25px);
   }
+
   100% {
     transform: translateY(0px);
   }
