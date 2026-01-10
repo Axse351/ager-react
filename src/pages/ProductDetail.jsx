@@ -32,7 +32,7 @@ const ProductDetail = () => {
         <div className="pd-breadcrumbs">
           <Link to="/">Home</Link>
           <span>/</span>
-          <Link to="/products">Products</Link>
+          <Link to="/product">Products</Link>
           <span>/</span>
           <span className="active">{state.name}</span>
         </div>
@@ -99,7 +99,7 @@ const ProductDetail = () => {
               <ul>
                 <li>✓ High density charcoal briquette</li>
                 <li>✓ Stable heat & consistent shape</li>
-                <li>✓ Suitable for BBQ & industrial use</li>
+                <li>✓ Suitable for Shisha</li>
                 <li>✓ Low smoke & minimal odor</li>
               </ul>
 

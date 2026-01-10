@@ -192,6 +192,10 @@
   position: relative;
 }
 
+.pd-tabs button:focus {
+  outline: none;
+}
+
 .pd-tabs button.active {
   color: #2b2b2b;
   font-weight: 600;
