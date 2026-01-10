@@ -29,33 +29,34 @@ export default function HomePage() {
   const productRefs = useRef([]);
   const [activeSlide, setActiveSlide] = useState(0);
 
-  const slides = [
-    {
-      title: "Integrated Production System",
-      desc: "End-to-end manufacturing control, ensuring consistency from raw material selection to finished product.",
-      video: "https://www.w3schools.com/html/mov_bbb.mp4",
-    },
-    {
-      title: "Strict Quality Standards",
-      desc: "Multi-stage inspection processes to maintain stable performance and uniform specifications.",
-      video: "https://www.w3schools.com/html/movie.mp4",
-    },
-    {
-      title: "Advanced Manufacturing Technology",
-      desc: "Continuously upgraded machinery to enhance efficiency, precision, and reliability.",
-      video: "https://www.w3schools.com/html/mov_bbb.mp4",
-    },
-    {
-      title: "Large-Scale Production Capacity",
-      desc: "Designed to support long-term contracts and high-volume export requirements.",
-      video: "https://www.w3schools.com/html/movie.mp4",
-    },
-    {
-      title: "Export-Oriented Management",
-      desc: "Operational systems aligned with international trade standards.",
-      video: "https://www.w3schools.com/html/mov_bbb.mp4",
-    },
-  ];
+const slides = [
+  {
+    title: "Integrated Production System",
+    desc: "End-to-end manufacturing control, ensuring consistency from raw material selection to finished product.",
+    video: "/video/production.mp4",
+  },
+  {
+    title: "Strict Quality Standards",
+    desc: "Multi-stage inspection processes to maintain stable performance and uniform specifications.",
+    video: "/video/quality.mp4",
+  },
+  {
+    title: "Advanced Manufacturing Technology",
+    desc: "Continuously upgraded machinery to enhance efficiency, precision, and reliability.",
+    video: "/video/technology.mp4",
+  },
+  {
+    title: "Large-Scale Production Capacity",
+    desc: "Designed to support long-term contracts and high-volume export requirements.",
+    video: "/video/capacity.mp4",
+  },
+  {
+    title: "Export-Oriented Management",
+    desc: "Operational systems aligned with international trade standards.",
+    video: "/video/export.mp4",
+  },
+];
+
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -222,52 +223,34 @@ export default function HomePage() {
       <section className="sub-headline" ref={subHeadlineRef}>
         <div className="sub-headline-inner">
           <p className="sub-text">
-            Delivering consistent quality through an integrated production
+            "Delivering consistent quality through an integrated production
             system, strict quality control, and large-scale manufacturing
-            capacity for global markets.
+            capacity for global markets."
           </p>
         </div>
       </section>
 
-      <div className="natural-section">
-        <div className="natural-left">
-          <span className="natural-label">100% NATURAL</span>
+      <section className="export-story">
+  <div className="export-inner">
+    <div className="export-text">
+      <span className="export-badge">Export Oriented Manufacturer</span>
+      <h2>
+        Premium Coconut Shell <br /> Shisha Briquettes
+      </h2>
+      <p>
+        Ager is an export-oriented manufacturer specializing in premium coconut
+        shell shisha briquettes, supplying international partners with
+        consistent quality and reliable production capacity.
+      </p>
+    </div>
 
-          <h2 className="natural-title">
-            Premium Coconut <br /> Charcoal Briquettes
-          </h2>
+    <div className="export-visual">
+      <img src="/images/factory-export.jpg" alt="Ager Export Production" />
+      {/* bisa ganti video */}
+    </div>
+  </div>
+</section>
 
-          <p className="natural-desc">
-            Made from selected coconut shells with high carbon content. Produces
-            long-lasting heat, low ash, odorless and smokeless.
-          </p>
-
-          <div className="natural-features">
-            <div className="feature-item">
-              <img src={coconutShell} alt="Coconut Shell" />
-              <span>Coconut Shell</span>
-            </div>
-
-            <div className="feature-item">
-              <img src={briquetteAsh} alt="Low Ash" />
-              <span>Low Ash</span>
-            </div>
-
-            <div className="feature-item">
-              <img src={exportQualityBadge} alt="Export Quality" />
-              <span>Export Quality</span>
-            </div>
-          </div>
-
-          <button className="natural-btn">Request Quote</button>
-          <small className="minimum-order">Minimum order available</small>
-        </div>
-
-        <div className="natural-right">
-          <img className="briquette-main" src={briquette} alt="Briquette" />
-          <img className="briquette-float" src={briquette} alt="Briquette" />
-        </div>
-      </div>
 
       {/* ================= STATS ================= */}
       <section className="stats-section" ref={statsRef}>
@@ -367,62 +350,49 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-      <section className="video-slider-section">
+     <section className="video-slider-section">
         <h2 className="video-section-title">
           Built for Consistency. Designed for Global Demand.
         </h2>
 
-        <div className="video-slider-wrapper">
-          {/* LEFT ARROW */}
-          <button
-            className="slider-arrow left"
-            onClick={() =>
-              setActiveSlide(
-                activeSlide === 0 ? slides.length - 1 : activeSlide - 1,
-              )
-            }
-            aria-label="Previous slide"
-          >
-            ‹
-          </button>
-
-          {/* SLIDER CONTAINER */}
-          <div className="video-slider-container">
-            {slides.map((item, index) => (
-              <div
-                className={`video-slide ${
-                  activeSlide === index ? "active" : ""
-                }`}
-                key={index}
-                style={{
-                  display: activeSlide === index ? "grid" : "none",
-                }}
-              >
-                <div className="video-text">
-                  <h3>{item.title}</h3>
-                  <p>{item.desc}</p>
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          navigation
+          pagination={{ 
+            clickable: true,
+            dynamicBullets: true 
+          }}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          spaceBetween={30}
+          slidesPerView={1}
+          loop={true}
+          className="video-swiper"
+        >
+          {slides.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="video-slide-content">
+                <div className="video-text-box">
+                  <h3 className="slide-title">{item.title}</h3>
+                  <p className="slide-desc">{item.desc}</p>
                 </div>
 
-                <div className="video-box">
-                  <video src={item.video} muted autoPlay loop playsInline />
+                <div className="video-container">
+                  <video
+                    src={item.video}
+                    muted
+                    autoPlay
+                    loop
+                    playsInline
+                    className="slide-video"
+                  />
                 </div>
               </div>
-            ))}
-          </div>
-
-          {/* RIGHT ARROW */}
-          <button
-            className="slider-arrow right"
-            onClick={() =>
-              setActiveSlide(
-                activeSlide === slides.length - 1 ? 0 : activeSlide + 1,
-              )
-            }
-            aria-label="Next slide"
-          >
-            ›
-          </button>
-        </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </section>
 
       <Footer />

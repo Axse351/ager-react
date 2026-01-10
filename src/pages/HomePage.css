@@ -1062,28 +1062,29 @@ textarea {
 }
 
 .sub-headline {
-  background: linear-gradient(
-    to right,
-    #f9f5ef,
-    #ffffff,
-    #f9f5ef
-  );
-  padding: 3.5rem 0;
+  background: linear-gradient(to right,
+      #f9f5ef,
+      #ffffff,
+      #f9f5ef);
+  padding: 5.5rem 0;
+  /* ⬆️ lebih tinggi */
 }
 
 .sub-headline-inner {
-  max-width: 900px;
+  max-width: 1100px;
+  /* ⬆️ area teks lebih lebar */
   margin: 0 auto;
   text-align: center;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 
 .sub-headline-inner p {
   font-family: "Playfair Display", serif;
-  font-size: 20px;
-  line-height: 1.8;
+  font-size: 28px;
+  /* ⬆️ dari 20px */
+  line-height: 1.7;
   color: #7a5a3a;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
 }
 .stats-section {
   position: relative;
@@ -1102,7 +1103,7 @@ textarea {
 }
 
 .stats-title {
-  font-size: 3rem;
+  font-size: 7rem;
   margin-bottom: 1rem;
   color: #601616;
 }
@@ -1113,6 +1114,7 @@ textarea {
   font-size: 1.1rem;
   opacity: 0.85;
   line-height: 1.7;
+  color: #601616;
 }
 
 /* FLOATING IMAGES */
@@ -1152,16 +1154,29 @@ textarea {
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2.5rem;
+  gap: 3rem;
+  margin-top: 4rem;
 }
 
 .stat-item h3 {
-  font-size: 2.5rem;
-  color: #601616;
+  font-size: 964px;
+  /* ⬆️ angka BESAR */
+  font-weight: 600;
+  color: #6b4a2d;
+  margin-bottom: 0.6rem;
+  line-height: 1;
+}
+
+.stat-item h3 span {
+  font-size: inherit;
 }
 
 .stat-item p {
-  opacity: 0.8;
+  font-size: 50px;
+  /* ⬆️ label lebih besar */
+  letter-spacing: 0.5px;
+  color: #8a6a4a;
+  font-weight: 500;
 }
 
 /* ===== LIGHTWEIGHT KNOW MORE BUTTON ===== */
@@ -1172,7 +1187,7 @@ textarea {
   background: transparent;
   color: #601616;
   border: 1px solid rgba(192, 129, 66, 0.55);
-  font-size: 0.9rem;
+  font-size: 4.9rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1397,6 +1412,7 @@ textarea {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1407,6 +1423,7 @@ textarea {
   from {
     opacity: 1;
   }
+
   to {
     opacity: 0;
   }
@@ -1427,6 +1444,7 @@ textarea {
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -1465,6 +1483,7 @@ textarea {
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -1651,4 +1670,50 @@ textarea {
   .video-container {
     max-width: 100%;
   }
+}
+
+.export-story {
+  background: #1f1b16;
+  /* dark earthy */
+  padding: 6rem 0;
+  color: #fff;
+}
+
+.export-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.export-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.export-text h2 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.export-text p {
+  font-size: 20px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.export-visual img {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
 }
