@@ -1178,25 +1178,23 @@ textarea {
 }
 
 .stat-item h3 {
-  font-size: 964px;
-  /* ⬆️ angka BESAR */
-  font-weight: 600;
-  color: #6b4a2d;
-  margin-bottom: 0.6rem;
+  font-size: 72px;   /* ⬆️ BESAR */
+  font-weight: 700;
   line-height: 1;
+  margin-bottom: 0.75rem;
+  color: #6b4a2d;
 }
 
 .stat-item h3 span {
-  font-size: inherit;
+  font-size: inherit; /* pastikan angka ikut besar */
 }
 
 .stat-item p {
-  font-size: 50px;
-  /* ⬆️ label lebih besar */
+  font-size: 20px;
   letter-spacing: 0.5px;
   color: #8a6a4a;
-  font-weight: 500;
 }
+
 
 /* ===== LIGHTWEIGHT KNOW MORE BUTTON ===== */
 .btn-know-more {
@@ -1358,7 +1356,7 @@ textarea {
 }
 
 .quality-icon {
-  font-size: 34px;
+  font-size: 56px;
   margin-bottom: 18px;
   display: inline-block;
 }
