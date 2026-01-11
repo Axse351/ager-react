@@ -57,125 +57,165 @@ body {
     line-height: 1.8;
 }
 
-/* ================= WHY US ================= */
+/* ================= WHY SECTION ================= */
 .why-section {
-    padding: 100px 80px;
+  padding: 140px 8%;
+  background: #f9f7f4;
 }
 
 .why-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.why-title {
-    font-size: 42px;
-    font-weight: 700;
-    color: #c47a2c;
-    margin-bottom: 20px;
+/* HEADER */
+.why-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 90px;
 }
 
-.why-description {
-    max-width: 750px;
-    margin: 0 auto 50px;
-    font-size: 16px;
-    line-height: 1.7;
-    color: #333;
+.why-header span {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #601616;
 }
 
+.why-header h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 18px 0;
+  color: #1f1f1f;
+}
+
+.why-header p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* CONTENT */
+.why-content {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 70px;
+  align-items: center;
+}
+
+/* FEATURES */
 .why-features {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 16px;
-    margin-bottom: 60px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
 }
 
-.feature-box {
-    border: 1px solid #c47a2c;
-    padding: 14px 10px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: #000;
-    transition: all 0.3s ease;
+.why-item {
+  background: #fff;
+  padding: 36px 34px;
+  border-radius: 18px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.07);
+  transition: 0.35s ease;
 }
 
-.feature-box:hover {
-    background: #c47a2c;
-    color: #fff;
+.why-item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #601616;
 }
 
+.why-item p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+.why-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 70px rgba(96, 22, 22, 0.2);
+}
+
+/* IMAGE */
 .why-image img {
-    width: 100%;
-    max-width: 900px;
-    border-radius: 6px;
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.3);
 }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .why-content {
+    grid-template-columns: 1fr;
+  }
+
+  .why-features {
+    grid-template-columns: 1fr;
+  }
+
+  .why-header h2 {
+    font-size: 2.2rem;
+  }
+}
+
 
 /* ================= HISTORY ================= */
-.history-section {
-    position: relative;
-    padding: 160px 0;
-    background: #faf8f0;
-    overflow: hidden;
+.company-story {
+  padding: 140px 20px;
+  background: #f6f4ee;
 }
 
-/* MARQUEE BACKGROUND */
-.history-marquee {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    z-index: 0;
-    pointer-events: none;
+.story-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 80px;
 }
 
-.marquee-track {
-    position: absolute;
-    top: 50%;
-    display: flex;
-    gap: 80px;
-    white-space: nowrap;
-    animation: marqueeMove 28s linear infinite;
-    transform: translateY(-50%);
+.story-header span {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  color: #601616;
+  font-weight: 600;
 }
 
-.marquee-track span {
-    font-size: clamp(5rem, 12vw, 9rem);
-    font-weight: 800;
-    letter-spacing: 0.2em;
-    color: rgba(250, 232, 70, 0.74);
-    animation: wave 4s ease-in-out infinite;
+.story-header h2 {
+  font-size: 2.6rem;
+  margin-top: 15px;
+  color: #1f1f1f;
 }
 
-.marquee-track span:nth-child(even) {
-    animation-delay: 0.6s;
+.story-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
 }
 
-/* CONTENT BOX */
-.history-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
+.story-card {
+  background: #fff;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
 }
 
-.history-grid {
-    background: #faf8f0;
-    border-radius: 14px;
-    padding: 70px 80px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px 60px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+.story-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #1f1f1f;
 }
 
-.history-grid h3,
-.history-grid p {
-    color: #000;
+.story-card p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #555;
 }
+
 
 /* ================= VISION & MISSION ================= */
 .vision-mission-section {
-    background: #c47a2c;
+    background: #601616;
     padding: 120px 80px;
     color: #fff;
 }
@@ -215,7 +255,7 @@ body {
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 800;
     letter-spacing: 0.3em;
-    color: #c47a2c;
+    color: #601616;
     white-space: nowrap;
 }
 
@@ -233,7 +273,7 @@ body {
 .vision-mission-header span {
     display: inline-block;
     background: #fff;
-    color: #c47a2c;
+    color: #601616;
     padding: 10px 24px;
     margin-left: 12px;
 }
@@ -346,7 +386,7 @@ body {
 
 /* ================= OUR PRODUCTION ================= */
 .production-section {
-    background: #c47a2c;
+    background: #601616;
     padding: 120px 80px;
     text-align: center;
     color: #fff;
@@ -396,7 +436,7 @@ body {
     border-radius: 50%;
     border: none;
     background: #fff;
-    color: #c47a2c;
+    color: #601616;
     font-size: 26px;
     font-weight: bold;
     cursor: pointer;
@@ -510,4 +550,49 @@ body {
     .vision-mission-header {
         margin-bottom: 50px;
     }
+}
+
+
+/* ================= CORE VALUES ================= */
+.values-section {
+  padding: 6rem 10%;
+  background: #FEE6D8;
+  color: #fff;
+  text-align: center;
+}
+
+.values-title {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  letter-spacing: 2px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+}
+
+.value-card {
+  background: #601616;
+  border: 1px solid #FEE6D8;
+  padding: 2.5rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+  background: rgba(240, 90, 90, 0.747);
+}
+
+.value-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.value-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  opacity: 0.85;
 }

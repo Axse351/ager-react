@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import Header from "../components/Header";
 import "./about.css";
-
+import Footer from "../components/Footer";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import dummyHome from "../assets/background.jpeg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -86,77 +87,100 @@ gsap.to(".floating.right", {
       </section>
 
       {/* ================= WHY US ================= */}
-      <section className="why-section">
-        <div className="why-container">
-          <h2 className="why-title">WHY US?</h2>
+     {/* ================= WHY US ================= */}
+<section className="why-section">
+  <div className="why-container">
+    <div className="why-header">
+      <span>Why Choose Us</span>
+      <h2>Reliable Partner for Global Markets</h2>
+      <p>
+        PT Coco Ager Indonesia delivers premium coconut shell briquettes
+        supported by strict quality control, efficient production, and
+        competitive pricing.
+      </p>
+    </div>
 
-          <p className="why-description">
-            Established in 2020, PT COCO AGER INDONESIA is a leading manufacturer
-            and exporter of high-quality hookah and BBQ charcoal. We are
-            committed to innovation, sustainability, and delivering premium
-            products worldwide.
-          </p>
-
-          <div className="why-features">
-            <div className="feature-box">PREMIUM QUALITY</div>
-            <div className="feature-box">CUSTOMIZATION ORDER</div>
-            <div className="feature-box">COMPETITIVE PRICE</div>
-            <div className="feature-box">PRODUCT CERTIFICATE</div>
-            <div className="feature-box">FAST PRODUCTION</div>
-          </div>
-
-          <div className="why-image">
-            <img src="src/assets/dummy-home.png" alt="Why Us" />
-          </div>
-        </div>
-      </section>
-
-      {/* ================= HISTORY ================= */}
-      <section className="history-section" ref={historyRef}>
-        <div className="history-marquee">
-          <div className="marquee-track">
-            {Array.from({ length: 24 }).map((_, i) => (
-              <span key={i}>AGER</span>
-            ))}
-          </div>
+    <div className="why-content">
+      <div className="why-features">
+        <div className="why-item">
+          <h4>Premium Quality</h4>
+          <p>Produced from selected coconut shells with strict QC standards.</p>
         </div>
 
-        <div className="history-container">
-          <div className="history-grid">
-            <div className="history-item">
-              <h3>History</h3>
-              <p>
-                A company with more than 5 years of experience in manufacturing
-                premium coconut charcoal for global markets.
-              </p>
-            </div>
-
-            <div className="history-item">
-              <h3>Integration</h3>
-              <p>
-                A fully integrated enterprise where brand excellence and
-                in-house manufacturing operate as one.
-              </p>
-            </div>
-
-            <div className="history-item">
-              <h3>Global Reach</h3>
-              <p>
-                A strong international footprint with offices and
-                representatives across 4 continents and 6 countries.
-              </p>
-            </div>
-
-            <div className="history-item">
-              <h3>Commitment</h3>
-              <p>
-                Unwavering dedication to delivering consistent quality and
-                products our customers truly deserve.
-              </p>
-            </div>
-          </div>
+        <div className="why-item">
+          <h4>Customization Order</h4>
+          <p>Flexible specifications to match your market requirements.</p>
         </div>
-      </section>
+
+        <div className="why-item">
+          <h4>Competitive Price</h4>
+          <p>Efficient manufacturing ensures stable and competitive pricing.</p>
+        </div>
+
+        <div className="why-item">
+          <h4>Product Certification</h4>
+          <p>Export-ready products supported by required certifications.</p>
+        </div>
+
+        <div className="why-item">
+          <h4>Fast Production</h4>
+          <p>Optimized capacity to meet tight delivery schedules.</p>
+        </div>
+      </div>
+
+      <div className="why-image">
+        <img src={dummyHome} alt="Why Choose Coco Ager Indonesia" />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+   {/* ================= COMPANY STORY ================= */}
+<section className="company-story">
+  <div className="story-header">
+    <span>Our Foundation</span>
+    <h2>Building Trust Through Quality & Consistency</h2>
+  </div>
+
+  <div className="story-grid">
+    <div className="story-card">
+      <h3>History</h3>
+      <p>
+        With more than five years of experience, PT Coco Ager Indonesia has
+        established itself as a reliable manufacturer of premium coconut
+        charcoal briquettes for global markets.
+      </p>
+    </div>
+
+    <div className="story-card">
+      <h3>Integration</h3>
+      <p>
+        Our fully integrated production system ensures complete control from
+        raw materials to export-ready products.
+      </p>
+    </div>
+
+    <div className="story-card">
+      <h3>Global Reach</h3>
+      <p>
+        We serve international partners across continents, supported by a
+        growing global network.
+      </p>
+    </div>
+
+    <div className="story-card">
+      <h3>Commitment</h3>
+      <p>
+        Every briquette we produce reflects our commitment to consistency,
+        reliability, and customer satisfaction.
+      </p>
+    </div>
+  </div>
+</section>
+
+
 
       {/* ================= VISION & MISSION ================= */}
       <section className="vision-mission-section">
@@ -192,44 +216,47 @@ gsap.to(".floating.right", {
         </div>
       </section>
 
-      {/* ================= STATISTICS ================= */}
-     <section className="stats-section" ref={statsRef}>
-  {/* BACKGROUND IMAGES */}
-  <img
-    src="/src/assets/gambar2.png"
-    alt=""
-    className="stats-image floating left"
-  />
+     {/* ================= CORE VALUES ================= */}
+<section className="values-section">
+  <h2 className="values-title">OUR CORE VALUES</h2>
 
-  <img
-    src="/src/assets/gambar4.png"
-    alt=""
-    className="stats-image floating right"
-  />
+  <div className="values-grid">
+    <div className="value-card">
+      <h3>Quality Excellence</h3>
+      <p>
+        We maintain strict quality control to ensure every briquette meets
+        international standards.
+      </p>
+    </div>
 
-  {/* CONTENT */}
-  <div className="stats-grid">
-    {[
-      { value: 10, label: "Country", suffix: "+" },
-      { value: 8000, label: "Land Area", suffix: " m²" },
-      { value: 5, label: "Experience", suffix: "+" },
-      { value: 600, label: "Production Capacity", suffix: " tons" },
-    ].map((item, i) => (
-      <div className="stat-item" key={i}>
-        <h3>
-          <span
-            ref={(el) => (numbersRef.current[i] = el)}
-            data-target={item.value}
-          >
-            0
-          </span>
-          {item.suffix}
-        </h3>
-        <p>{item.label}</p>
-      </div>
-    ))}
+    <div className="value-card">
+      <h3>Sustainability</h3>
+      <p>
+        Our production process is environmentally responsible, utilizing
+        renewable coconut shell resources.
+      </p>
+    </div>
+
+    <div className="value-card">
+      <h3>Innovation</h3>
+      <p>
+        We continuously adopt modern technology to improve efficiency and
+        product consistency.
+      </p>
+    </div>
+
+    <div className="value-card">
+      <h3>Customer Commitment</h3>
+      <p>
+        Long-term partnerships and customer satisfaction are at the heart of
+        our business.
+      </p>
+    </div>
   </div>
 </section>
+
+
+<Footer />
 
     </div>
   );

@@ -33,27 +33,27 @@ const slides = [
   {
     title: "Integrated Production System",
     desc: "End-to-end manufacturing control, ensuring consistency from raw material selection to finished product.",
-    video: "/video/production.mp4",
+    video: "/video/vid1.mp4",
   },
   {
     title: "Strict Quality Standards",
     desc: "Multi-stage inspection processes to maintain stable performance and uniform specifications.",
-    video: "/video/quality.mp4",
+    video: "/video/vid2.mp4",
   },
   {
     title: "Advanced Manufacturing Technology",
     desc: "Continuously upgraded machinery to enhance efficiency, precision, and reliability.",
-    video: "/video/technology.mp4",
+    video: "/video/vid3.mp4",
   },
   {
     title: "Large-Scale Production Capacity",
     desc: "Designed to support long-term contracts and high-volume export requirements.",
-    video: "/video/capacity.mp4",
+    video: "/video/vid4.mp4",
   },
   {
     title: "Export-Oriented Management",
     desc: "Operational systems aligned with international trade standards.",
-    video: "/video/export.mp4",
+    video: "/video/vid5.mp4",
   },
 ];
 
@@ -233,10 +233,13 @@ const slides = [
       <section className="export-story">
   <div className="export-inner">
     <div className="export-text">
-      <span className="export-badge">Export Oriented Manufacturer</span>
+      <span className="export-badge">Contact</span>
+
       <h2>
-        Premium Coconut Shell <br /> Shisha Briquettes
+        Premium Coconut Shell <br />
+        Shisha Briquettes
       </h2>
+
       <p>
         Ager is an export-oriented manufacturer specializing in premium coconut
         shell shisha briquettes, supplying international partners with
@@ -245,11 +248,11 @@ const slides = [
     </div>
 
     <div className="export-visual">
-      <img src="/images/factory-export.jpg" alt="Ager Export Production" />
-      {/* bisa ganti video */}
+      <img src={coconutShell} alt="Ager Export Production" />
     </div>
   </div>
 </section>
+
 
 
       {/* ================= STATS ================= */}
@@ -350,50 +353,59 @@ const slides = [
           ))}
         </div>
       </section>
-     <section className="video-slider-section">
-        <h2 className="video-section-title">
-          Built for Consistency. Designed for Global Demand.
-        </h2>
+   <section className="video-slider-section">
+  <h2 className="video-section-title">
+    Built for Consistency. Designed for Global Demand.
+  </h2>
 
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          navigation
-          pagination={{ 
-            clickable: true,
-            dynamicBullets: true 
-          }}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
-          spaceBetween={30}
-          slidesPerView={1}
-          loop={true}
-          className="video-swiper"
-        >
-          {slides.map((item, index) => (
-            <SwiperSlide key={index}>
-              <div className="video-slide-content">
-                <div className="video-text-box">
-                  <h3 className="slide-title">{item.title}</h3>
-                  <p className="slide-desc">{item.desc}</p>
-                </div>
+  <Swiper
+    modules={[Navigation, Pagination, Autoplay]}
+    navigation
+    pagination={{
+      clickable: true,
+      dynamicBullets: true,
+    }}
+    autoplay={{
+      delay: 5000,
+      disableOnInteraction: false,
+    }}
+    spaceBetween={40}
+    slidesPerView={1}
+    loop
+    className="video-swiper"
+    onSlideChange={(swiper) => {
+      document
+        .querySelectorAll(".slide-video")
+        .forEach((v) => v.pause());
 
-                <div className="video-container">
-                  <video
-                    src={item.video}
-                    muted
-                    autoPlay
-                    loop
-                    playsInline
-                    className="slide-video"
-                  />
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </section>
+      const activeVideo =
+        swiper.slides[swiper.activeIndex]?.querySelector("video");
+      if (activeVideo) activeVideo.play();
+    }}
+  >
+    {slides.map((item, index) => (
+      <SwiperSlide key={index}>
+        <div className="video-slide-content">
+          <div className="video-text">
+            <h3>{item.title}</h3>
+            <p>{item.desc}</p>
+          </div>
+
+          <div className="video-box">
+            <video
+              src={item.video}
+              muted
+              loop
+              playsInline
+              className="slide-video"
+            />
+          </div>
+        </div>
+      </SwiperSlide>
+    ))}
+  </Swiper>
+</section>
+
 
       <Footer />
     </div>

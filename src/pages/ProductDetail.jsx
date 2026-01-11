@@ -57,11 +57,6 @@ const ProductDetail = () => {
             </ul>
 
             <div className="pd-actions">
-              <div className="pd-qty">
-                <button onClick={decreaseQty}>−</button>
-                <span>{qty}</span>
-                <button onClick={increaseQty}>+</button>
-              </div>
 
               <button className="pd-chat-btn">Chat to Buy</button>
             </div>
