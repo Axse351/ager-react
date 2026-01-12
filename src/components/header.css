@@ -1,0 +1,72 @@
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1.2rem 10rem;
+
+    /* 🔥 Glass / blu-ish effect */
+    background: rgba(252, 252, 252, 0.542);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Logo */
+.logo {
+    height: 50px;
+    cursor: pointer;
+}
+
+/* Nav */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav span {
+    color: #490300;
+    cursor: pointer;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.nav span:hover {
+    opacity: 0.7;
+}
+
+.nav button {
+    padding: 0.6rem 1.6rem;
+    border-radius: 25px;
+    background: #601616;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+
+.nav button:hover {
+    background: #a86c32;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+    .header-fixed {
+        padding: 1rem 1.5rem;
+    }
+
+    .nav {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+}

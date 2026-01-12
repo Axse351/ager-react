@@ -1,0 +1,82 @@
+.footer {
+  background: #601616;
+  padding: 40px 100px;
+  color: white;
+  font-family: serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+}
+
+.footer-brand .logo {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.footer-brand p {
+  max-width: 320px;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 24px;
+}
+
+.socials {
+  display: flex;
+  gap: 14px;
+}
+
+.socials span {
+  width: 36px;
+  height: 36px;
+  border: 1px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.footer-col h4 {
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.footer-col li:hover,
+.link:hover {
+  text-decoration: underline;
+}
+
+.link {
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .footer {
+    padding: 60px 24px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

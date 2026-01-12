@@ -1,0 +1,289 @@
+.overall-pd-container {
+  background-color: #f7f4ee;
+
+  min-height: 100vh;
+  width: 100dvw;
+}
+
+.pd-container {
+  min-height: 100vh;
+  width: 100dvw;
+  padding-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pd-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* IMAGE */
+.pd-image-wrapper {
+  /* background: #ffffff; */
+  border-radius: 24px;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+}
+
+.pd-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* INFO */
+
+.pd-description {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.pd-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 32px;
+}
+
+.pd-features li {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* CTA */
+.pd-actions {
+  margin-bottom: 24px;
+}
+
+.pd-chat-btn {
+  background-color: #7f835c;
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.pd-chat-btn:hover {
+  background-color: #4b743b;
+  transform: translateY(-2px);
+}
+
+/* META */
+.pd-meta {
+  font-size: 14px;
+  color: #777;
+}
+
+/* NOT FOUND */
+.pd-notfound {
+  padding: 80px;
+  text-align: center;
+}
+
+/* BREADCRUMBS */
+.pd-breadcrumbs {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  font-size: 14px;
+  color: #777;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pd-breadcrumbs a {
+  color: #5e8b4a;
+  text-decoration: none;
+}
+
+.pd-breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.pd-breadcrumbs .active {
+  color: #333;
+  font-weight: 500;
+}
+
+/* ACTIONS */
+.pd-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* QTY */
+.pd-qty {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.pd-qty button {
+  background: #f0ede6;
+  border: none;
+  padding: 10px 16px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.2s ease;
+}
+
+.pd-qty button:hover {
+  background: #e2dfd8;
+}
+
+.pd-qty span {
+  padding: 0 18px;
+  font-size: 16px;
+  min-width: 32px;
+  text-align: center;
+}
+/* HIGHLIGHTS */
+.pd-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 60px auto 32px;
+  max-width: 1200px;
+}
+
+.pd-highlights div {
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* TABS */
+.pd-tabs {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid #ddd;
+  max-width: 1200px;
+  margin: 40px auto 24px;
+}
+
+.pd-tabs button {
+  background: none;
+  border: none;
+  padding: 12px 0;
+  font-size: 15px;
+  cursor: pointer;
+  color: #777;
+  position: relative;
+}
+
+.pd-tabs button:focus {
+  outline: none;
+}
+
+.pd-tabs button.active {
+  color: #2b2b2b;
+  font-weight: 600;
+}
+
+.pd-tabs button.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #5e8b4a;
+}
+
+/* TAB CONTENT */
+.pd-tab-content {
+  max-width: 1200px;
+  margin: 0 auto 80px;
+}
+
+.pd-tab-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  background: #fff;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.pd-tab-grid ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pd-tab-grid li {
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.pd-tab-grid h4 {
+  margin-bottom: 16px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .pd-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .pd-tab-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pd-tabs {
+    gap: 16px;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .pd-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pd-qty {
+    justify-content: space-between;
+  }
+
+  .pd-chat-btn {
+    width: 100%;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .pd-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .pd-title {
+    font-size: 28px;
+  }
+
+  .pd-image-wrapper {
+    padding: 24px;
+  }
+}
