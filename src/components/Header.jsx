@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { logo } from "../assets";
 import "./Header.css";
 
 export default function Header() {
@@ -8,7 +9,7 @@ export default function Header() {
   return (
     <header className="header header-fixed">
       <img
-        src="/src/assets/logo.png"
+        src={logo}
         alt="AGER Logo"
         className="logo"
         onClick={() => navigate("/")}

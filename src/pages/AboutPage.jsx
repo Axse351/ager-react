@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import dummyHome from "../assets/background.jpeg";
+import { vid2 } from "../assets";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -70,7 +71,7 @@ gsap.to(".floating.right", {
       <section className="about-hero">
         <video
           className="about-hero-bg"
-          src="/video/ager-banner.mp4"
+          src={vid2}
           autoPlay
           loop
           muted

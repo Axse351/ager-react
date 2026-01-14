@@ -21,6 +21,9 @@ import icon3 from "../assets/icon3.png";
 import icon4 from "../assets/icon4.png";
 import icon5 from "../assets/icon5.png";
 import icon6 from "../assets/icon6.png";
+import banner from "../assets/banner.jpg";
+
+import {vid1, vid2, vid3, vid4, vid5} from "../assets"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,27 +44,27 @@ const slides = [
   {
     title: "Integrated Production System",
     desc: "End-to-end manufacturing control, ensuring consistency from raw material selection to finished product.",
-    video: "/video/vid1.mp4",
+    video: vid1,
   },
   {
     title: "Strict Quality Standards",
     desc: "Multi-stage inspection processes to maintain stable performance and uniform specifications.",
-    video: "/video/vid2.mp4",
+    video: vid2,
   },
   {
     title: "Advanced Manufacturing Technology",
     desc: "Continuously upgraded machinery to enhance efficiency, precision, and reliability.",
-    video: "/video/vid3.mp4",
+    video: vid3,
   },
   {
     title: "Large-Scale Production Capacity",
     desc: "Designed to support long-term contracts and high-volume export requirements.",
-    video: "/video/vid4.mp4",
+    video: vid4,
   },
   {
     title: "Export-Oriented Management",
     desc: "Operational systems aligned with international trade standards.",
-    video: "/video/vid5.mp4",
+    video: vid5,
   },
 ];
 
@@ -211,7 +214,7 @@ const slides = [
 
       {/* ================= BANNER ================= */}
       <section className="top-banner">
-        <img src="/src/assets/banner.JPG" alt="AGER Banner" />
+        <img src={banner} alt="AGER Banner" />
         <div className="banner-overlay">
           <h1 className="premium">Premium</h1>
           <h2 className="title">Coconut Charcoal</h2>
