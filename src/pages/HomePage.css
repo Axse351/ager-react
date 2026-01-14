@@ -1581,7 +1581,16 @@ textarea {
   );
   pointer-events: none;
 }
+/* MOBILE */
+@media (max-width: 640px) {
+  .stats-title {
+    font-size: 62px;
+  }
 
+  .stats-desc {
+    font-size: 14px;
+  }
+}
 .quality-icon {
   width: 100px;
   height: 100px;

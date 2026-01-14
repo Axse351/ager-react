@@ -281,7 +281,7 @@ const slides = [
         <div className="stats-content">
           <h2 className="stats-title">Our Capability</h2>
           <p className="stats-desc">
-            PT. Coco Ager Indonesia is an export-oriented manufacturer
+            Ager is an export-oriented manufacturer
             specializing in premium coconut shell shisha briquettes.
           </p>
 
