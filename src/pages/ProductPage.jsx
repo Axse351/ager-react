@@ -11,7 +11,6 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-// import required modules
 import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 
 const ProductPage = () => {
@@ -66,37 +65,10 @@ const ProductPage = () => {
   ];
 
   return (
-    // <div className="product-page">
-    //   <Header />
-
-    //   <h2>PRODUCTS</h2>
-    //   <div className="products">
-    //     <div className="product-showcase">
-    //       {products.map((product) => (
-    //         <div key={product.id}>
-    //           <img src={product.imgLink} alt={product.name} />
-    //           <h4>{product.name}</h4>
-    //           <p>{product.desc}</p>
-    //           <button
-    //             className="check-button"
-    //             onClick={() => goToDetail(product)}
-    //           >
-    //             Check
-    //           </button>
-    //         </div>
-    //       ))}
-    //     </div>
-    //   </div>
-    //   <Footer />
-    // </div>
+    
     <div className="product-page">
       <Header />
       <div className="carousel-container">
-        {/* {activeIndex === 0 && (
-        <div className="intro-text">
-          <h1>Products</h1>
-        </div>
-      )} */}
         <div className="intro-text">
           <h4 className="prod-tagline">PREMIUM COCONUT CHARCOAL</h4>
           <h1 className="prod-title">{activeProduct.name}</h1>
