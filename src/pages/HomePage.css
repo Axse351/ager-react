@@ -17,6 +17,7 @@
   transform: none !important;
   will-change: auto;
   text-align: center;
+  margin-top: 1px;
 }
 
 .title-line {
@@ -816,6 +817,7 @@
   color: #c47f3c;
   max-width: 380px;
   margin-bottom: 32px;
+  margin-top: -10px;
 }
 
 .contact-details p {
@@ -1255,6 +1257,7 @@ textarea {
   line-height: 1.7;
   opacity: 0.85;
 }
+
 
 /* GRID */
 .quality-grid {

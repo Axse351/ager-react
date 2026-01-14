@@ -80,8 +80,7 @@ gsap.to(".floating.right", {
         <div className="about-hero-content">
           <h1>ABOUT&nbsp;US</h1>
           <p>
-            To be the world's leading supplier of sustainable and high-quality
-            charcoal.
+             "A little journey AGER"
           </p>
         </div>
       </section>
@@ -97,41 +96,12 @@ gsap.to(".floating.right", {
         PT Coco Ager Indonesia delivers premium coconut shell briquettes
         supported by strict quality control, efficient production, and
         competitive pricing.
+
+        AGER is built on more than 20 years of experience in charcoal manufacturing, with a clear focus on quality, consistency, and global standards.
       </p>
     </div>
 
-    <div className="why-content">
-      <div className="why-features">
-        <div className="why-item">
-          <h4>Premium Quality</h4>
-          <p>Produced from selected coconut shells with strict QC standards.</p>
-        </div>
-
-        <div className="why-item">
-          <h4>Customization Order</h4>
-          <p>Flexible specifications to match your market requirements.</p>
-        </div>
-
-        <div className="why-item">
-          <h4>Competitive Price</h4>
-          <p>Efficient manufacturing ensures stable and competitive pricing.</p>
-        </div>
-
-        <div className="why-item">
-          <h4>Product Certification</h4>
-          <p>Export-ready products supported by required certifications.</p>
-        </div>
-
-        <div className="why-item">
-          <h4>Fast Production</h4>
-          <p>Optimized capacity to meet tight delivery schedules.</p>
-        </div>
-      </div>
-
-      <div className="why-image">
-        <img src={dummyHome} alt="Why Choose Coco Ager Indonesia" />
-      </div>
-    </div>
+    
   </div>
 </section>
 

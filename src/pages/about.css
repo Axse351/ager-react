@@ -211,7 +211,77 @@ body {
   line-height: 1.8;
   color: #555;
 }
+/* ================= RESPONSIVE ================= */
 
+/* Tablet (<= 1024px) */
+@media (max-width: 1024px) {
+  .company-story {
+    padding: 100px 24px;
+  }
+
+  .story-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .story-grid {
+    gap: 30px;
+  }
+
+  .story-card {
+    padding: 40px;
+  }
+}
+
+/* Mobile (<= 768px) */
+@media (max-width: 768px) {
+  .company-story {
+    padding: 80px 20px;
+  }
+
+  .story-header {
+    margin-bottom: 50px;
+  }
+
+  .story-header span {
+    font-size: 12px;
+  }
+
+  .story-header h2 {
+    font-size: 1.9rem;
+    line-height: 1.3;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    /* 🔥 jadi 1 kolom */
+    gap: 25px;
+  }
+
+  .story-card {
+    padding: 30px;
+    border-radius: 16px;
+  }
+
+  .story-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .story-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Small Mobile (<= 480px) */
+@media (max-width: 480px) {
+  .story-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .story-card {
+    padding: 24px;
+  }
+}
 
 /* ================= VISION & MISSION ================= */
 .vision-mission-section {
