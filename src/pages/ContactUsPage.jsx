@@ -38,8 +38,7 @@ const ContactUsPage = () => {
         <div className="contact-details">
           <h2>Contact Us</h2>
           <p className="subtitle">
-            Email, phone, or fill out the form to collaborate with PT Cocoager
-            Indonesia
+            Email, phone, or fill out the form to collaborate with Ager
           </p>
 
           <p className="link">cocoager@gmail.com</p>
