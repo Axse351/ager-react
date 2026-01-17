@@ -22,3 +22,5 @@ dist-ssr/
 # videos
 public/video/
 *.mp4
+# Ignore assets folder
+assets/
