@@ -59,6 +59,15 @@
     background: #a86c32;
 }
 
+.lang-selector {
+    display: flex;
+    gap: 10px;
+}
+
+.EN-lang, .AR-lang {
+    color: rgb(160, 160, 160);
+}
+
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
     .header-fixed {

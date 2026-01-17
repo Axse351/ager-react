@@ -3,18 +3,21 @@ import "./ContactUs.css";
 import { agreementPict } from "../assets";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { useTranslation } from "react-i18next";
 
 const ContactUsPage = () => {
+  const { t, i18n } = useTranslation();
+
   return (
     <div className="contact-container">
       <Header />
 
       <div className="heading-wrapper">
-        <h1 className="contact-title">CONTACT US</h1>
+        <h1 className="contact-title">{t("contactUs")}</h1>
         <h3 className="contact-subtitle">
-          We welcome inquiries about our coconut charcoal briquettes,
-          partnerships, and export information. Our team is ready to assist you
-          quickly and professionally.
+          {t(
+            "weWelcomeInquiriesAboutOurCoconutCharcoalBriquettespartnershipsAndExportInformationOurTeamIsReadyToAssistYouQuicklyAndProfessionally",
+          )}
         </h3>
       </div>
       {/* <img className="agreement-pic" src={agreementPict} alt="" /> */}
@@ -30,7 +33,7 @@ const ContactUsPage = () => {
           loading="lazy"
         ></iframe>
         <h3 className="location-detail">
-          7FWP+RFV, Bodesari, Kec. Plumbon, Kabupaten Cirebon, Jawa Barat 45155
+          {t("7fwprfvBodesariKecPlumbonKabupatenCirebonJawaBarat45155")}
         </h3>
       </div>
 
@@ -38,7 +41,7 @@ const ContactUsPage = () => {
         <div className="contact-details">
           <h2>Contact Us</h2>
           <p className="subtitle">
-            Email, phone, or fill out the form to collaborate with Ager
+            {t("emailPhoneOrFillOutTheFormToCollaborateWithAger")}
           </p>
 
           <p className="link">cocoager@gmail.com</p>
@@ -47,22 +50,22 @@ const ContactUsPage = () => {
         </div>
 
         <div className="contact-box">
-          <h3>Get in Touch</h3>
+          <h3>{t("getInTouch")}</h3>
 
           <div className="form-row">
-            <input type="text" placeholder="First Name" />
-            <input type="text" placeholder="Last Name" />
+            <input type="text" placeholder={t("firstName")} />
+            <input type="text" placeholder={t("lastName")} />
           </div>
 
           <div className="form-row">
-            <input type="email" placeholder="Email" />
-            <input type="tel" placeholder="Phone Number" />
+            <input type="email" placeholder={t("email")} />
+            <input type="tel" placeholder={t("phoneNumber")} />
           </div>
 
-          <textarea placeholder="How we can help?" />
+          <textarea placeholder={t("howWeCanHelp")} />
 
           <button className="submit-btn">
-            Check <span>→</span>
+            {t("check")} <span>→</span>
           </button>
         </div>
       </div>

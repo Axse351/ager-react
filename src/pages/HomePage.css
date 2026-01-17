@@ -1384,6 +1384,7 @@ textarea {
 
 /* ================= VIDEO SLIDER ================= */
 .video-slider-section {
+  height: fit-content;
   padding: 120px 6%;
   background: #FEE6D8;
   position: relative;
@@ -1581,7 +1582,16 @@ textarea {
   );
   pointer-events: none;
 }
+/* MOBILE */
+@media (max-width: 640px) {
+  .stats-title {
+    font-size: 62px;
+  }
 
+  .stats-desc {
+    font-size: 14px;
+  }
+}
 .quality-icon {
   width: 100px;
   height: 100px;
