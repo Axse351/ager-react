@@ -24,3 +24,9 @@ public/video/
 *.mp4
 # Ignore assets folder
 assets/
+
+# Build output
+dist/
+
+# Zip files
+*.zip
